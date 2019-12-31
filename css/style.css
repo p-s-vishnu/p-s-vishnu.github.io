@@ -958,6 +958,12 @@ input:-webkit-autofill {
     list-style: none;
     cursor: pointer;
 }
+.portfolio_filter_item {
+    font-size: 15px;
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
 
 .single_item {
     margin-bottom: 30px;
