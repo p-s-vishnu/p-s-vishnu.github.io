@@ -964,6 +964,10 @@ input:-webkit-autofill {
     font-family: 'Poppins', sans-serif;
     text-align: center;
 }
+.portfolio_filter_img{
+    width: 75%;
+    height: 75%;
+}
 
 .single_item {
     margin-bottom: 30px;
