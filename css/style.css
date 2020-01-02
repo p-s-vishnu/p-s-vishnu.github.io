@@ -1010,6 +1010,11 @@ input:-webkit-autofill {
 
 /*--------------------- Certifications --------------------*/
 
+.certificate_img{
+    width:  20%;
+    height: 20%;
+}
+
 
 /*------------------------ 5 Blog ------------------------*/
 
