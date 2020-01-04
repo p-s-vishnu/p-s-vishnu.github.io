@@ -1009,10 +1009,15 @@ input:-webkit-autofill {
 
 
 /*--------------------- Certifications --------------------*/
+.certificate_image img{
+    width: 100%;
+}
 
-.certificate_img{
-    width:  20%;
-    height: 20%;
+.certificate_item{
+    font-size: 15px;
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
 }
 
 
