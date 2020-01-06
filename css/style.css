@@ -1043,6 +1043,9 @@ input:-webkit-autofill {
     font-weight: bold;
     
 }
+.experience_text ul{
+    margin-left: 10px;
+}
 
 
 /*------------------------ 5 Blog ------------------------*/
