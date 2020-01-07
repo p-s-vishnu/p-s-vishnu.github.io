@@ -1008,6 +1008,45 @@ input:-webkit-autofill {
 }
 
 
+/*--------------------- Certifications --------------------*/
+.certificate_item img{
+    width: 100%;
+}
+
+.certificate_item img:hover {
+    background: #ffffff;
+    transition: all ease 0.3s;
+    box-shadow: 0px 16px 22px 0px rgba(90, 91, 95, 0.3);
+    top: -5px;
+  }
+
+.certificate_item{
+    font-size: 15px;
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+/*------------------------ Experience -------------------*/
+
+.experience_label h2 {
+    font-size: 20px;
+    font-family: 'Poppins';
+    font-weight: bold;
+       
+}
+.experience_text {
+    font-family: 'Poppins';
+    margin-top: 10px;
+}
+.experience_text h2 {
+    font-weight: bold;
+    
+}
+.experience_text ul{
+    margin-left: 10px;
+}
+
 
 /*------------------------ 5 Blog ------------------------*/
 
