@@ -1050,7 +1050,7 @@ input:-webkit-autofill {
 
 /*------------------------ 5 Blog ------------------------*/
 
-.blog-image img{
+/*.blog-image img{
     width: 100%;
 }
 
@@ -1194,11 +1194,11 @@ ul.post-comment li p {
 
 .send-message .subtitle{
     margin-bottom:30px;
-}
+}*/
 
 
 
-/*------------------------ 5 Contact ------------------------*/
+/*------------------------ 5 Contact ------------------------
 
 
 .contact-info{
@@ -1283,7 +1283,7 @@ a.site-button{
     background: #000;
     color: #fff;
     transition: all ease 0.3s;
-}
+}*/
 
 
 
