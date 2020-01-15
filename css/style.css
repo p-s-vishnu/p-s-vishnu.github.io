@@ -1011,6 +1011,7 @@ input:-webkit-autofill {
 /*--------------------- Certifications --------------------*/
 .certificate_item img{
     width: 100%;
+    
 }
 
 .certificate_item img:hover {
@@ -1025,6 +1026,7 @@ input:-webkit-autofill {
     color: #000000;
     font-family: 'Poppins', sans-serif;
     text-align: center;
+    
 }
 
 /*------------------------ Experience -------------------*/
