@@ -1048,6 +1048,10 @@ input:-webkit-autofill {
 .experience_text ul{
     margin-left: 10px;
 }
+.exp_date{
+    margin-left: 1.5px;
+    margin-top: 1px;
+}
 
 
 /*------------------------ 5 Blog ------------------------*/
