@@ -1047,6 +1047,13 @@ input:-webkit-autofill {
     margin-left: 1.5px;
     margin-top: 1px;
 }
+.text{
+    font-size: 15px;
+    font-family: 'Poppins';
+    color: #000000;
+    
+    
+}
 
 
 /*------------------------ 5 Blog ------------------------*/
