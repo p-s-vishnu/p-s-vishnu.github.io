@@ -13,7 +13,7 @@ $(window).load( function() {
 		fixedContentPos: false
 	});
         
-//PRELOADER
+//PRELOADER script 
  $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
 
     
