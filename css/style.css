@@ -30,10 +30,11 @@ html{
 }
 
 p{
-    font-size: 13px;
+    font-size: 16px;
     color: #777777;
     line-height: 24px;
     font-family: 'Poppins', sans-serif;
+    text-align: justify;
  }
 
 
@@ -1041,6 +1042,7 @@ input:-webkit-autofill {
     font-family: 'Poppins';
     margin-top: 10px;
     color: #000000;
+    text-align: justify;
 }
 .experience_text h2 {
     font-weight: bold;
@@ -1050,6 +1052,7 @@ input:-webkit-autofill {
     margin-left: 14px;
     color: #000000;
     padding-top: 5px;
+    text-align: justify;
 }
 .exp_date{
     margin-left: 1.5px;
@@ -1062,7 +1065,7 @@ input:-webkit-autofill {
     font-family: 'Poppins';
     color: #000000;
     padding-top: 10px;
-    
+    text-align: justify;
     
 }
 
