@@ -30,11 +30,11 @@ html{
 }
 
 p{
-    font-size: 16px;
+    font-size: 13px;
     color: #777777;
     line-height: 24px;
     font-family: 'Poppins', sans-serif;
-    text-align: justify;
+    
  }
 
 
@@ -859,12 +859,18 @@ input:-webkit-autofill {
 .about-text{
     display: table;
     height: 407px;
+    text-align: justify;
+    
  } 
 
 .out{
     display: table-cell;
    vertical-align: middle;
+   
  } 
+ .out p{
+     font-size: 16px;
+ }
 
 .typed-cursor{
     opacity: 1;
@@ -919,7 +925,10 @@ input:-webkit-autofill {
 
 .what-can .feature p{
     line-height: 20px;
+    font-size: 14px;
 }
+
+
 
 
 
