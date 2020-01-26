@@ -870,6 +870,7 @@ input:-webkit-autofill {
  } 
  .out p{
      font-size: 16px;
+     text-align: justify
  }
 
 .typed-cursor{
@@ -1071,12 +1072,15 @@ input:-webkit-autofill {
 }
 .text{
     font-size: 16px;
+    font-style: italic;
     font-family: 'Poppins';
     color: #000000;
     padding-top: 10px;
-    text-align: justify;
+    
     
 }
+
+
 
 
 /*------------------------ 5 Blog ------------------------*/
