@@ -1052,7 +1052,7 @@ input:-webkit-autofill {
     font-family: 'Poppins';
     margin-top: 10px;
     color: #000000;
-    text-align: justify;
+    
 }
 .experience_text h2 {
     font-weight: bold;
@@ -1076,6 +1076,7 @@ input:-webkit-autofill {
     font-family: 'Poppins';
     color: #000000;
     padding-top: 10px;
+    
     
     
 }
