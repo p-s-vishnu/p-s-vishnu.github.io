@@ -1081,6 +1081,16 @@ input:-webkit-autofill {
     
 }
 
+.visitor{
+    padding-top: 10px;
+}
+
+.visitor h3{
+    font-family: 'poppins';
+    color: white;
+    padding-bottom: 5px;
+}
+
 
 
 
