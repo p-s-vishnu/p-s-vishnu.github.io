@@ -1,0 +1,30 @@
+---
+id: projects
+title: Projects
+slug: /projects
+---
+
+import ProjectCard from '../components/ProjectCard';
+
+<main>
+  <section className="container margin-vert--lg">
+    <div className="row">
+      <div className="col col--5 margin-bottom--lg">
+        <ProjectCard
+          title="Cassava Leaf Disease Classification"
+          description="Building an image classifier for detecting diseases in cassava plants using PyTorch and scikit-learn."
+          imageUrl="/img/projects/cv3_crop.jpg"
+          githubLink="https://github.com/p-s-vishnu/cassava-leaf-disease-classification"
+        />
+      </div>
+      <div className="col col--4 margin-bottom--lg">
+        <ProjectCard
+          title="Taxi fare prediction using GCP’s Vertex AI"
+          description="Serve and process real-time data with a Tensorflow model using Pub-Sub, Cloud Dataflow, BigQuery and Vertex AI."
+          imageUrl="/img/projects/taxi.png"
+          githubLink="https://medium.com/@psvishnu/online-prediction-using-gcps-vertex-ai-e5fbc089906d"
+        />
+      </div>
+    </div>
+  </section>
+</main>

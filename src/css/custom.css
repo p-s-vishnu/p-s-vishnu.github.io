@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/solid.min.css);
+
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+    --ifm-color-primary: #3f51b5;
+    /* Indigo 500 */
+    --ifm-color-primary-dark: #303f9f;
+    /* Indigo 700 */
+    --ifm-color-primary-darker: #283593;
+    /* Indigo 800 */
+    --ifm-color-primary-darkest: #1a237e;
+    /* Indigo 900 */
+    --ifm-color-primary-light: #5c6bc0;
+    /* Indigo 400 */
+    --ifm-color-primary-lighter: #7986cb;
+    /* Indigo 300 */
+    --ifm-color-primary-lightest: #9fa8da;
+    /* Indigo 200 */
+    --ifm-code-font-size: 95%;
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+    --ifm-background-color: #FFFFFF;
+    /* White */
+    --ifm-background-surface-color: #F5F5F5;
+    /* Light Gray */
+    --ifm-font-color-base: #212121;
+    /* Darkest Gray */
+    --ifm-font-family-base: 'DM Sans', sans-serif;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+    --ifm-color-primary: #7f5af0;
+    /* Button/Highlight */
+    --ifm-color-primary-dark: #6a48d0;
+    /* Derived darker */
+    --ifm-color-primary-darker: #5536b0;
+    /* Derived even darker */
+    --ifm-color-primary-darkest: #402490;
+    /* Derived darkest */
+    --ifm-color-primary-light: #9472ff;
+    /* Derived lighter */
+    --ifm-color-primary-lighter: #a98bff;
+    /* Derived even lighter */
+    --ifm-color-primary-lightest: #be9fff;
+    /* Derived lightest */
+
+    --ifm-background-color: #16161a;
+    /* Background */
+    --ifm-background-surface-color: #282828;
+    /* Keeping existing surface for now, adjust if needed */
+    --ifm-font-color-base: #fffffe;
+    /* Headline/Main */
+    --ifm-font-color-secondary: #94a1b2;
+    /* Paragraph */
+    --ifm-color-secondary: #72757e;
+    /* Secondary */
+    --ifm-color-tertiary: #2cb67d;
+    /* Tertiary */
+    --ifm-color-stroke: #010101;
+    /* Stroke */
+    /* Off-White */
+    --ifm-code-font-size: 95%;
+    --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
+}
+
+/* Reduce blog title size */
+.blog-post-page .hero__title,
+.blog-post-page h1.margin-bottom--lg {
+    font-size: .5rem;
+    /* Equivalent to a typical h4 size */
+}
+
+.blog-post-page h2.margin-bottom--lg {
+    font-size: 0.5rem;
+    /* Slightly smaller for sub-headings if they exist */
+}
+
+/* Navbar scroll effect */
+.navbar {
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(3px);
+    box-shadow: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+[data-theme='dark'] .navbar {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.navbar--scrolled {
+    background-color: var(--ifm-background-color);
+    box-shadow: var(--ifm-navbar-shadow);
+}
+
+/* Ensure the theme toggle and other icons are visible on a transparent background */
+[data-theme='light'] .navbar {
+    --ifm-navbar-link-color: var(--ifm-font-color-base);
+}
+
+[data-theme='dark'] .navbar:not(.navbar--scrolled) {
+    background-color: transparent !important;
+}
+
+/* Footer Customizations */
+.footer--dark {
+    --ifm-footer-background-color: #16161a;
+    /* Match new dark theme background */
+}
+
+.footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    /* Subtle line separator */
+}
+
+.footer__links {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.footer__col {
+    width: 100%;
+}
+
+.footer__items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    /* Space between icons */
+    width: 100%;
+    margin: 0;
+}
+
+.footer__item {
+    list-style: none;
+}
+
+.footer__item a i {
+    font-size: 1.5rem;
+    /* Icon size */
+    color: var(--ifm-footer-link-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer__item a:hover i {
+    color: var(--ifm-color-primary);
+    transform: scale(1.1);
+}
+
+.footer__copyright {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Custom Blog Title Size */
+.blog-post-header h1 {
+    font-size: 2.5rem;
+    /* Adjust this value as needed */
+}
+
+@media screen and (max-width: 768px) {
+    .blog-post-header h1 {
+        font-size: 1.75rem;
+    }
+}
