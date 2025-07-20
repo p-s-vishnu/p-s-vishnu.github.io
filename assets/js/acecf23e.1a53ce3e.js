@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[903],{1912:s=>{s.exports=JSON.parse('{"blogBasePath":"/p-s-vishnu.github.io/","blogTitle":"Blog","authorsListPath":"/p-s-vishnu.github.io/authors"}')}}]);
