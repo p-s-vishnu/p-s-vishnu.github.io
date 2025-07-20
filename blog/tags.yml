@@ -1,0 +1,39 @@
+facebook:
+  label: Facebook
+  permalink: /facebook
+  description: Facebook tag description
+
+hello:
+  label: Hello
+  permalink: /hello
+  description: Hello tag description
+
+docusaurus:
+  label: Docusaurus
+  permalink: /docusaurus
+  description: Docusaurus tag description
+
+hola:
+  label: Hola
+  permalink: /hola
+  description: Hola tag description
+# --------------------------------------
+rag:
+  label: RAG
+  permalink: /rag
+  description: RAG tag description
+
+llm:
+  label: LLM
+  permalink: /llm
+  description: LLM tag description
+  
+mlops:
+  label: MLOps
+  permalink: /mlops
+  description: MLOps tag description
+
+agents:
+  label: Agents
+  permalink: /agents
+  description: Agents tag description
