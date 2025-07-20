@@ -4,8 +4,8 @@
   <ShortName>Vishnu Puramchalil</ShortName>
   <Description>Search Vishnu Puramchalil</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://p-s-vishnu.github.io/p-s-vishnu.github.io/img/old/icon_minion.png</Image>
-  <Url type="text/html" method="get" template="https://p-s-vishnu.github.io/p-s-vishnu.github.io/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://p-s-vishnu.github.io/p-s-vishnu.github.io/opensearch.xml" />
-  <moz:SearchForm>https://p-s-vishnu.github.io/p-s-vishnu.github.io/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://p-s-vishnu.github.io/img/old/icon_minion.png</Image>
+  <Url type="text/html" method="get" template="https://p-s-vishnu.github.io/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://p-s-vishnu.github.io/opensearch.xml" />
+  <moz:SearchForm>https://p-s-vishnu.github.io/</moz:SearchForm>
 </OpenSearchDescription>
