@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[121],{8070:e=>{e.exports=JSON.parse('{"tags":[{"label":"RAG","permalink":"/blog/tags/rag","description":"RAG tag description","count":1}]}')}}]);
