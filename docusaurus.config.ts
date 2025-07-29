@@ -139,7 +139,7 @@ const config: Config = {
         // },
         {
           label: 'About',
-          to: '/about',
+          to: '/',
           position: 'right'
         },
       ],
