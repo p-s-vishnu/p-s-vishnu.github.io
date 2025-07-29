@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Vishnu Puramchalil',
+  title: 'Vishnu P.S.',
   tagline: 'AI Engineer - Deep Learning | LLM | RAG | Agents | MLOps',
   favicon: 'img/old/icon_minion.png',
 
@@ -41,7 +41,7 @@ const config: Config = {
       'classic',
       {
         blog: {
-          routeBasePath: '/', // Make blogs the home page
+          // routeBasePath: '/',
           showReadingTime: true,
           feedOptions: {
             type: ['rss', 'atom'],
@@ -122,21 +122,21 @@ const config: Config = {
         src: 'img/old/icon_minion.png',
       },
       items: [
-        {
-          label: 'Notes',
-          to: '/notes',
-          position: 'right',
-        },
-        {
-          to: '/',
-          label: 'Blog',
-          position: 'right',
-        },
-        {
-          label: 'Projects',
-          to: '/projects',
-          position: 'right',
-        },
+        // {
+        //   label: 'Notes',
+        //   to: '/notes',
+        //   position: 'right',
+        // },
+        // {
+        //   to: '/',
+        //   label: 'Blog',
+        //   position: 'right',
+        // },
+        // {
+        //   label: 'Projects',
+        //   to: '/projects',
+        //   position: 'right',
+        // },
         {
           label: 'About',
           to: '/about',

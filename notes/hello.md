@@ -1,5 +1,4 @@
 ---
-slug: /
 title: Hello World
 sidebar_label: 'Hi!'
 sidebar_position: 1
