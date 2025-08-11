@@ -1,9 +1,12 @@
 ---
-title: Hello World
+slug: /
+title: Hello
 sidebar_label: 'Hi!'
 sidebar_position: 1
 ---
 
-### Hello
+# 👋 Welcome!
 
-This is my **first Docusaurus document**!
+This is a collection of random unstructured / semi-structured notes and thoughts. 
+
+I just think better when I write them down.

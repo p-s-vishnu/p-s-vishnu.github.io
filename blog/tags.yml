@@ -18,22 +18,53 @@ hola:
   permalink: /hola
   description: Hola tag description
 # --------------------------------------
-rag:
-  label: RAG
-  permalink: /rag
-  description: RAG tag description
+machine-learning:
+  label: Machine Learning
+  permalink: /machine-learning
+  description: Classical Machine Learning
+
+math:
+  label: Math
+  permalink: /math
+  description: Math behind ML, Research papers, etc.
 
 llm:
   label: LLM
   permalink: /llm
-  description: LLM tag description
-  
-mlops:
-  label: MLOps
-  permalink: /mlops
-  description: MLOps tag description
+  description: LLM, LLMs, etc.
+
+retrieval:
+  label: Information Retrieval
+  permalink: /information-retrieval
+  description: Retrieval, Retrieval-Augmented Generation, Search, etc.
 
 agents:
   label: Agents
   permalink: /agents
-  description: Agents tag description
+  description: Multi-turn AI workflows, planning agents etc.
+
+rag:
+  label: RAG
+  permalink: /rag
+  description: LLM with retrieval augmentation.
+
+recommendations:
+  label: Recommendations
+  permalink: /recommendations
+  description: Recommendations systems and algorithm
+
+mlops:
+  label: MLOps
+  permalink: /mlops
+  description: MLOps, end to end lifecycle
+
+usecase:
+  label: Use Case
+  permalink: /usecase
+  description: Company Use Cases, whitepaper, product, etc.  
+
+software-engineering:
+  label: Software Engineering
+  permalink: /software-engineering
+  description: Software engineering, design patterns, etc.
+

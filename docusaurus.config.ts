@@ -41,7 +41,7 @@ const config: Config = {
       'classic',
       {
         blog: {
-          // routeBasePath: '/',
+          routeBasePath: '/',
           showReadingTime: true,
           feedOptions: {
             type: ['rss', 'atom'],
@@ -122,21 +122,21 @@ const config: Config = {
         src: 'img/old/icon_minion.png',
       },
       items: [
-        // {
-        //   label: 'Notes',
-        //   to: '/notes',
-        //   position: 'right',
-        // },
-        // {
-        //   to: '/',
-        //   label: 'Blog',
-        //   position: 'right',
-        // },
-        // {
-        //   label: 'Projects',
-        //   to: '/projects',
-        //   position: 'right',
-        // },
+        {
+          label: 'Notes',
+          to: '/notes',
+          position: 'right',
+        },
+        {
+          to: '/',
+          label: 'Blog',
+          position: 'right',
+        },
+        {
+          label: 'Projects',
+          to: '/projects',
+          position: 'right',
+        },
         {
           label: 'About',
           to: '/',
@@ -165,7 +165,7 @@ const config: Config = {
               html: `<a href="https://www.kaggle.com/psvishnu" target="_blank" rel="noopener noreferrer" aria-label="Kaggle" title="Kaggle"><i class="fa-brands fa-kaggle"></i></a>`,
             },
             {
-              html: `<a href="/blog/rss.xml" target="_blank" rel="noopener noreferrer" aria-label="RSS Feed" title="RSS Feed"><i class="fa-solid fa-rss"></i></a>`,
+              html: `<a href="/rss.xml" target="_blank" rel="noopener noreferrer" aria-label="RSS Feed" title="RSS Feed"><i class="fa-solid fa-rss"></i></a>`,
             }
           ]
         },
@@ -173,7 +173,8 @@ const config: Config = {
     },
     prism: {
       theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      darkTheme: prismThemes.vsDark,
+      defaultLanguage: 'python',
     },
   } satisfies Preset.ThemeConfig,
 };

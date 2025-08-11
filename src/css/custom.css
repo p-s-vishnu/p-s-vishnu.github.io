@@ -4,87 +4,62 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/solid.min.css);
 
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * Global Styles and Variables
  */
 
-/* You can override the default Infima variables here. */
+/* Blog Post Styles */
+.title_f1Hy {
+    font-size: 2rem;
+}
+
+/* Blog post image sizing */
+.markdown img {
+    max-width: 70%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 :root {
     --ifm-color-primary: #3f51b5;
-    /* Indigo 500 */
     --ifm-color-primary-dark: #303f9f;
-    /* Indigo 700 */
     --ifm-color-primary-darker: #283593;
-    /* Indigo 800 */
     --ifm-color-primary-darkest: #1a237e;
-    /* Indigo 900 */
     --ifm-color-primary-light: #5c6bc0;
-    /* Indigo 400 */
     --ifm-color-primary-lighter: #7986cb;
-    /* Indigo 300 */
     --ifm-color-primary-lightest: #9fa8da;
-    /* Indigo 200 */
     --ifm-code-font-size: 95%;
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
     --ifm-background-color: #FFFFFF;
-    /* White */
     --ifm-background-surface-color: #F5F5F5;
-    /* Light Gray */
     --ifm-font-color-base: #212121;
-    /* Darkest Gray */
     --ifm-font-family-base: 'DM Sans', sans-serif;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
     --ifm-color-primary: #7f5af0;
-    /* Button/Highlight */
     --ifm-color-primary-dark: #6a48d0;
-    /* Derived darker */
     --ifm-color-primary-darker: #5536b0;
-    /* Derived even darker */
     --ifm-color-primary-darkest: #402490;
-    /* Derived darkest */
     --ifm-color-primary-light: #9472ff;
-    /* Derived lighter */
     --ifm-color-primary-lighter: #a98bff;
-    /* Derived even lighter */
     --ifm-color-primary-lightest: #be9fff;
-    /* Derived lightest */
-
     --ifm-background-color: #16161a;
-    /* Background */
     --ifm-background-surface-color: #282828;
-    /* Keeping existing surface for now, adjust if needed */
     --ifm-font-color-base: #fffffe;
-    /* Headline/Main */
     --ifm-font-color-secondary: #94a1b2;
-    /* Paragraph */
     --ifm-color-secondary: #72757e;
-    /* Secondary */
     --ifm-color-tertiary: #2cb67d;
-    /* Tertiary */
     --ifm-color-stroke: #010101;
-    /* Stroke */
-    /* Off-White */
     --ifm-code-font-size: 95%;
     --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
 }
 
-/* Reduce blog title size */
-.blog-post-page .hero__title,
-.blog-post-page h1.margin-bottom--lg {
-    font-size: .5rem;
-    /* Equivalent to a typical h4 size */
-}
+/**
+ * Component-Specific Styles
+ */
 
-.blog-post-page h2.margin-bottom--lg {
-    font-size: 0.5rem;
-    /* Slightly smaller for sub-headings if they exist */
-}
-
-/* Navbar scroll effect */
+/* Navbar Styles */
 .navbar {
     transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
     background-color: rgba(255, 255, 255, 0.1);
@@ -103,7 +78,6 @@
     box-shadow: var(--ifm-navbar-shadow);
 }
 
-/* Ensure the theme toggle and other icons are visible on a transparent background */
 [data-theme='light'] .navbar {
     --ifm-navbar-link-color: var(--ifm-font-color-base);
 }
@@ -112,15 +86,13 @@
     background-color: transparent !important;
 }
 
-/* Footer Customizations */
+/* Footer Styles */
 .footer--dark {
     --ifm-footer-background-color: #16161a;
-    /* Match new dark theme background */
 }
 
 .footer {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
-    /* Subtle line separator */
 }
 
 .footer__links {
@@ -138,7 +110,6 @@
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
-    /* Space between icons */
     width: 100%;
     margin: 0;
 }
@@ -149,7 +120,6 @@
 
 .footer__item a i {
     font-size: 1.5rem;
-    /* Icon size */
     color: var(--ifm-footer-link-color);
     transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -164,12 +134,18 @@
     margin-top: 1rem;
 }
 
-/* Custom Blog Title Size */
-.blog-post-header h1 {
-    font-size: 2.5rem;
-    /* Adjust this value as needed */
+/* Code Block Styles */
+.theme-code-block code {
+    font-size: 0.85em;
 }
 
+:not(pre)>code {
+    font-size: 0.85em;
+}
+
+/**
+ * Media Queries
+ */
 @media screen and (max-width: 768px) {
     .blog-post-header h1 {
         font-size: 1.75rem;
