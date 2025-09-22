@@ -1,4 +1,8 @@
 .projectCard {
+  height: 100%;
+}
+
+.projectLink {
   text-decoration: none !important;
   color: inherit !important;
   height: 100%;
@@ -6,17 +10,17 @@
   flex-direction: column;
 }
 
-.projectCard:hover {
+.projectLink:hover {
   text-decoration: none;
 }
 
-.projectCard .card__image img {
+.projectLink .card__image img {
   width: 100%;
   height: 200px; /* Fixed height for images */
   object-fit: cover; /* Ensure images cover the area without distortion */
 }
 
-.projectCard .card__body {
+.projectLink .card__body {
   flex-grow: 1;
   display: flex;
   flex-direction: column;

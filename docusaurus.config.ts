@@ -132,14 +132,14 @@ const config: Config = {
           label: 'Blog',
           position: 'right',
         },
-        {
-          label: 'Projects',
-          to: '/projects',
-          position: 'right',
-        },
+        // {
+        //   label: 'Projects',
+        //   to: '/projects',
+        //   position: 'right',
+        // },
         {
           label: 'About',
-          to: '/',
+          to: '/about',
           position: 'right'
         },
       ],

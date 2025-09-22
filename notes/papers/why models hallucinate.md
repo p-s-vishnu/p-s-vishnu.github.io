@@ -1,5 +1,5 @@
 ---
-title: Paper - Why Language Models Hallucinate
+title: Why Language Models Hallucinate
 tags:
   - math
   - llm
