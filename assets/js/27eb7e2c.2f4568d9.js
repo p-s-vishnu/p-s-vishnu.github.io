@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[1286],{2933:t=>{t.exports=JSON.parse('{"tag":{"label":"python","permalink":"/notes/tags/python","allTagsPath":"/notes/tags","count":1,"items":[{"id":"Python","title":"Python","description":"Async programming","permalink":"/notes/Python"}],"unlisted":false}}')}}]);
