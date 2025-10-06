@@ -1,4 +1,8 @@
-
+---
+tags:
+    - mlops
+    - usecase
+---
 # Learnings from Monzo: AWS reInvent A Deep Dive into Building a Digital Bank
 
 Let’s take a sneak peek into the world of Monzo, the digital banking rocking around 8 million accounts, mostly in the UK. When they hit 4 million customers there were just eight tech folks on the infrastructure and reliability team running the show on AWS.
