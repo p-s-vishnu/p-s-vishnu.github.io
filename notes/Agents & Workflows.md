@@ -4,7 +4,9 @@ tags:
   - llm
 ---
 
-## Theory 
+# Theory 
+
+[Anthropic Building effective agents](https://www.anthropic.com/engineering/building-effective-agents)
 
 ![Autonomy levels](/img/blog/agent_autonomy_levels.png)
 
@@ -12,25 +14,23 @@ Broad categorisation
 
 ![Agent Workflow](/img/blog/agent_workflow.png)
 
-## 1. Predefined paths
+0. Basic Building block: The augmented LLM - LLM enhanced with Retrieval, Memory and Tools.
 
-### 1.1. Prompt Chaining
-### 1.2. Parallelisation
+1. Predefined paths
+    1. Prompt Chaining
+    2. Parallelisation
 
-## 2. LLM directs control flow in predefined paths
+2. LLM directs control flow in predefined paths - Workflow
+    1. Orchestrator-Worker (Planning pattern)
+    2. Evaluator-optimiser (Reflection pattern)
+    3. Routing
 
-### 2.1. Orchestrator-Worker
-
-### 2.2. Evaluator-optimiser
-
-### 2.3. Routing
-
-## 3. LLM directs its own actions
+3. LLM directs its own actions (Open ended problems) - Agent
 
 ---
-## Practical
+# Practical
 
-### 1. Stateful Agent Workflows with [LangGraph](https://github.com/NirDiamant/agents-towards-production/blob/main/tutorials/LangGraph-agent/langgraph_tutorial.ipynb)
+## 1. Stateful Agent Workflows with [LangGraph](https://github.com/NirDiamant/agents-towards-production/blob/main/tutorials/LangGraph-agent/langgraph_tutorial.ipynb)
 
 - **State Management:** Maintain persistent state across interactions
 - **Flexible Routing:** Define complex flows between components
@@ -136,6 +136,11 @@ async def stream_agent(request: QueryRequest):
 - Next steps in the page: advanced agents, fast api background task, async db.
 
 ## 3. [Agent memory with redis](https://github.com/NirDiamant/agents-towards-production/tree/main/tutorials/agent-memory-with-redis)
+- Dual-Memory Architecture: Short-term (conversation state) and long-term (persistent knowledge) memory.
+- Semantic Search: RedisVL for semantic memory retrieval with embeddings.
+- Memory Types: Understand differences between Episodic (user experiences) vs Semantic (general knowledge) memory patterns.
+- Production Patterns: Tool-based memory management and conversation summarization
+- Redis checkpointers for state persistence.
 
 ## 4. [Tool & API Integration via Model Context Protocol (MCP)](https://github.com/NirDiamant/agents-towards-production/blob/main/tutorials/agent-with-mcp/mcp-tutorial.ipynb)
 
@@ -159,7 +164,7 @@ MCP solves these challenges by providing a standardised protocol that enables:
 
 ---
 
-### Paralant chatbots
+## Paralant chatbots
 
 https://www.parlant.io/docs/about
 
