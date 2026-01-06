@@ -1,6 +1,6 @@
-# Data Agent: Pydantic AI
+# Data Agent
 
-A practical walkthrough of building 
+WIP
 
 <!-- truncate -->
 
