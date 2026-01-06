@@ -4,4 +4,4 @@ The article will be covering the risks of ML and Google’s responsible AI pract
 
 <!-- truncate -->
 
-[Orginally posted here](https://medium.com/@psvishnu/how-to-frame-an-ml-problem-2-2-4490d85bb562)
+## [Read complete article here](https://medium.com/@psvishnu/how-to-frame-an-ml-problem-2-2-4490d85bb562)
