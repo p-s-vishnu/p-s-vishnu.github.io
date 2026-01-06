@@ -6,22 +6,26 @@ tags:
 
 # Theory 
 
+[Anthropic Building effective agents](https://www.anthropic.com/engineering/building-effective-agents)
+
 ![Autonomy levels](/img/blog/agent_autonomy_levels.png)
 
 Broad categorisation
 
 ![Agent Workflow](/img/blog/agent_workflow.png)
 
+0. Basic Building block: The augmented LLM - LLM enhanced with Retrieval, Memory and Tools.
+
 1. Predefined paths
     1. Prompt Chaining
     2. Parallelisation
 
 2. LLM directs control flow in predefined paths - Workflow
-    1. Orchestrator-Worker
-    2. Evaluator-optimiser
+    1. Orchestrator-Worker (Planning pattern)
+    2. Evaluator-optimiser (Reflection pattern)
     3. Routing
 
-3. LLM directs its own actions - Agent
+3. LLM directs its own actions (Open ended problems) - Agent
 
 ---
 # Practical
