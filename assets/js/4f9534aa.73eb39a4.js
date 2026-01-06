@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[3240],{8980:e=>{e.exports=JSON.parse('{"tag":{"label":"retrieval","permalink":"/notes/tags/retrieval","allTagsPath":"/notes/tags","count":1,"items":[{"id":"Langchain","title":"Langchain","description":"References","permalink":"/notes/Langchain"}],"unlisted":false}}')}}]);

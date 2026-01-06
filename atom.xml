@@ -2,11 +2,32 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://p-s-vishnu.github.io/</id>
     <title>Vishnu P.S. Blog</title>
-    <updated>2024-01-06T00:00:00.000Z</updated>
+    <updated>2025-08-03T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://p-s-vishnu.github.io/"/>
     <subtitle>Vishnu P.S. Blog</subtitle>
     <icon>https://p-s-vishnu.github.io/img/old/icon_minion.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Data Agent: Pydantic AI]]></title>
+        <id>https://p-s-vishnu.github.io/2025/08/03/compare-agent-framework-1</id>
+        <link href="https://p-s-vishnu.github.io/2025/08/03/compare-agent-framework-1"/>
+        <updated>2025-08-03T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[A practical walkthrough of building]]></summary>
+        <content type="html"><![CDATA[<p>A practical walkthrough of building</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="components">Components<a href="https://p-s-vishnu.github.io/2025/08/03/compare-agent-framework-1#components" class="hash-link" aria-label="Direct link to Components" title="Direct link to Components">​</a></h2>
+<ol>
+<li>Tool Call Python</li>
+<li>Memory integration<!-- -->
+<ul>
+<li>State Management: Maintain persistent state across interactions</li>
+<li>Flexible Routing: Define complex flows between components</li>
+<li>Persistence: Save and resume workflows</li>
+<li>Visualization: See and understand your agent's structure</li>
+<li>MCP server</li>
+</ul>
+</li>
+</ol>]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Learnings from Monzo: AWS reInvent A Deep Dive into Building a Digital Bank]]></title>
         <id>https://p-s-vishnu.github.io/2024/01/06/Monzo-AWS-reInvent</id>
@@ -125,6 +146,26 @@ Solution — Thanos as a sidecar to the Prometheus servers</p>
 <p>Emulates multiple Prometheus servers’ query search as a single one with Thanos. It uses Thanos query which fans out to all the sidecar applications retrieving the location of the requested data i.e. parallely searching for the requested data.
 To meet the second requirement, Thanos takes periodic strides, saving data to the S3 bucket, ensuring a repository that surpasses the 24-hour timeframe
 Beyond this, an array of metrics are monitored by the system like request metrics, low-level system metrics, business logic, social media trends, etc. Hence, various Alert managers are created using Prometheus to detect anomalies and observe trends.</p>]]></content>
+        <category label="MLOps" term="MLOps"/>
+        <category label="Use Case" term="Use Case"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Part 2: How to frame an ML problem?]]></title>
+        <id>https://p-s-vishnu.github.io/2022/07/25/how-to-frame-an-ml-problem-part2</id>
+        <link href="https://p-s-vishnu.github.io/2022/07/25/how-to-frame-an-ml-problem-part2"/>
+        <updated>2022-07-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[The article will be covering the risks of ML and Google’s responsible AI practices. This article has a predecessor, for a better understanding, I would recommend you have a look at the previous article.]]></summary>
+        <content type="html"><![CDATA[<p>The article will be covering the risks of ML and Google’s responsible AI practices. This article has a predecessor, for a better understanding, I would recommend you have a look at the previous article.</p>
+<p><a href="https://medium.com/@psvishnu/how-to-frame-an-ml-problem-2-2-4490d85bb562" target="_blank" rel="noopener noreferrer">Orginally posted here</a></p>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Part 1: How to frame an ML problem?]]></title>
+        <id>https://p-s-vishnu.github.io/2022/07/14/how-to-frame-an-ml-problem-part1</id>
+        <link href="https://p-s-vishnu.github.io/2022/07/14/how-to-frame-an-ml-problem-part1"/>
+        <updated>2022-07-14T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[The article is my attempt to capture Section 1- “Frame ML problems” of the Professional Machine Learning Engineer (PMLE) certification exam. Even though the topics are aligned to PMLE, readers who are interested to know about defining business challenges as an ML use case, establishing success criteria, and mitigating risks of ML solutions will also find it useful.]]></summary>
+        <content type="html"><![CDATA[<p>The article is my attempt to capture&nbsp;<strong>Section 1- “Frame ML problems”</strong>&nbsp;of the Professional Machine Learning Engineer (PMLE) certification exam. Even though the topics are aligned to PMLE, readers who are interested to know about defining business challenges as an ML use case, establishing success criteria, and mitigating risks of ML solutions will also find it useful.</p>
+<p><a href="https://medium.com/@psvishnu/how-to-frame-an-ml-problem-1-2-b6380cdd8b64" target="_blank" rel="noopener noreferrer">Originally posted here</a></p>]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Online prediction using GCP’s Vertex AI]]></title>
