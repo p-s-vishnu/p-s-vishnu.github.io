@@ -8,6 +8,10 @@ const config: Config = {
   title: 'Vishnu P.S.',
   tagline: 'AI Engineer - Deep Learning | LLM | RAG | Agents | MLOps',
   favicon: 'img/old/icon_minion.png',
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
