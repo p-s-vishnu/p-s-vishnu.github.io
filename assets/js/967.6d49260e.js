@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkportfolio=globalThis.webpackChunkportfolio||[]).push([[967],{967(e,o,a){a.d(o,{createPacketServices:()=>c.$});var c=a(2012);a(9932)}}]);

@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkportfolio=globalThis.webpackChunkportfolio||[]).push([[7252],{2497(a){a.exports=JSON.parse('{"tag":{"label":"async","permalink":"/notes/tags/async","allTagsPath":"/notes/tags","count":1,"items":[{"id":"Languages/Python","title":"Python","description":"Async programming","permalink":"/notes/Languages/Python"}],"unlisted":false}}')}}]);
