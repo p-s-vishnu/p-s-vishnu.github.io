@@ -10,6 +10,9 @@ const config: Config = {
   favicon: 'img/old/icon_minion.png',
   markdown: {
     mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
   },
   themes: ['@docusaurus/theme-mermaid'],
 
@@ -17,6 +20,37 @@ const config: Config = {
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
+
+  // Client modules for browser-side functionality
+  clientModules: [
+    './src/clientModules/navbar-scroll.js',
+  ],
+
+  // Preconnect to external resources for better performance
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://fonts.googleapis.com',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+        crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://cdnjs.cloudflare.com',
+      },
+    },
+  ],
 
   // Set the production url of your site here
   url: 'https://p-s-vishnu.github.io', // Updated with your GitHub Pages URL
@@ -30,7 +64,6 @@ const config: Config = {
   projectName: 'p-s-vishnu.github.io', // Your repo name.
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -99,7 +132,7 @@ const config: Config = {
       // },
 
       // Optional: path for search page that Algolia will use to display search results
-      contextualSearch: true,
+      contextualSearch: false, // Disabled temporarily until Algolia index is properly configured
 
       // Optional: Algolia search parameters
       // externalUrlRegex: 'external\.com/docs/',

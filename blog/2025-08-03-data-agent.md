@@ -7,7 +7,7 @@ tags:
   - software-engineering
 ---
 
-Build a data analysis agent that turns natural language into SQL, runs queries against a database, and returns insights -- using LangGraph, FastAPI, Redis, LiteLLM, and MCP. Everything runs locally via Docker Compose.
+Build a data analysis agent that turns natural language into SQL, runs queries against a database, and returns insights using LangGraph, FastAPI, Redis, LiteLLM, and MCP. Everything runs locally via Docker Compose.
 
 <!-- truncate -->
 

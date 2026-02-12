@@ -3,21 +3,21 @@
 }
 
 .projectLink {
-  text-decoration: none !important;
-  color: inherit !important;
+  text-decoration: none;
+  color: inherit;
   height: 100%;
-  display: flex;
-  flex-direction: column;
+  display: block;
 }
 
-.projectLink:hover {
-  text-decoration: none;
+.projectLink .card__image {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
 }
 
 .projectLink .card__image img {
   width: 100%;
-  height: 200px; /* Fixed height for images */
-  object-fit: cover; /* Ensure images cover the area without distortion */
+  height: 100%;
+  object-fit: cover;
 }
 
 .projectLink .card__body {
@@ -25,4 +25,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.description {
+  font-size: 0.875rem;
+  margin: 0;
 }

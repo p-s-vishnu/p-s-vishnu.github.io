@@ -63,14 +63,26 @@
 .navbar {
     transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
     background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(3px);
     box-shadow: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Only apply backdrop-filter on desktop (prevents mobile sidebar breakage) */
+@media (min-width: 997px) {
+    .navbar {
+        backdrop-filter: blur(3px);
+    }
 }
 
 [data-theme='dark'] .navbar {
     background-color: rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 997px) {
+    [data-theme='dark'] .navbar {
+        backdrop-filter: blur(3px);
+    }
 }
 
 .navbar--scrolled {
@@ -150,4 +162,47 @@
     .blog-post-header h1 {
         font-size: 1.75rem;
     }
+}
+
+/* Accessibility - Focus Visible Styles */
+.navbar__link:focus-visible,
+.navbar__item a:focus-visible,
+.footer__item a:focus-visible,
+.menu__link:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .navbar,
+  .footer__item a i {
+    transition: none;
+  }
+}
+
+/* Additional responsive breakpoints */
+@media screen and (max-width: 1024px) {
+  .navbar__items {
+    gap: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar__title {
+    font-size: 1rem;
+  }
+
+  .footer__items {
+    gap: 1rem;
+  }
 }

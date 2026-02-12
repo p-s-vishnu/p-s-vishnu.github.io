@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
@@ -12,15 +12,21 @@ interface ProjectCardProps {
   githubLink?: string;
   rotateAmplitude?: number;
   scaleOnHover?: number;
+  altText?: string;
+  containerHeight?: string;
+  containerWidth?: string;
+  imageHeight?: string;
+  imageWidth?: string;
 }
 
-function ProjectCard({ 
-  title, 
-  description, 
-  imageUrl, 
-  githubLink, 
-  rotateAmplitude = 10, 
-  scaleOnHover = 1.05 
+function ProjectCard({
+  title,
+  description,
+  imageUrl,
+  githubLink,
+  rotateAmplitude = 10,
+  scaleOnHover = 1.05,
+  altText
 }: ProjectCardProps) {
   return (
     <Tilt
@@ -30,21 +36,28 @@ function ProjectCard({
       perspective={1000}
       transitionSpeed={1500}
       scale={scaleOnHover}
-      gyroscope={true}
+      gyroscope={typeof window !== 'undefined' && 'DeviceOrientationEvent' in window}
+      role="region"
+      aria-label={`${title} project card`}
     >
       <Link to={githubLink} className={styles.projectLink}>
         {imageUrl && (
           <div className="card__image">
-            <img src={useBaseUrl(imageUrl)} alt={title} title={title} />
+            <img
+              src={useBaseUrl(imageUrl)}
+              alt={altText || title}
+              title={title}
+              loading="lazy"
+            />
           </div>
         )}
         <div className="card__body">
           <h4>{title}</h4>
-          <small>{description}</small>
+          <p className={styles.description}>{description}</p>
         </div>
       </Link>
     </Tilt>
   );
 }
 
-export default ProjectCard;
+export default memo(ProjectCard);

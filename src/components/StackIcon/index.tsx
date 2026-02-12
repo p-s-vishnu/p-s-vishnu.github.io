@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import styles from './styles.module.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -54,6 +54,11 @@ const StackIcon = ({ name, width = 40, height = 40 }: StackIconProps) => {
     iconUrl = `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${deviconName}/${deviconName}-original.svg`;
   }
 
+  const handleError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    console.warn(`Failed to load icon: ${name}`);
+    e.currentTarget.style.opacity = '0.3';
+  };
+
   return (
     <img
       className={styles.icon}
@@ -62,11 +67,14 @@ const StackIcon = ({ name, width = 40, height = 40 }: StackIconProps) => {
       title={iconTitle}
       width={width}
       height={height}
-      // Add a simple error handler to show a placeholder or hide the icon
-      onError={(e) => { e.currentTarget.style.display = 'none'; }}
+      loading="lazy"
+      onError={handleError}
     />
   );
 };
 
-export default StackIcon;
+const MemoizedStackIcon = memo(StackIcon);
+MemoizedStackIcon.displayName = 'StackIcon';
+
+export default MemoizedStackIcon;
 
