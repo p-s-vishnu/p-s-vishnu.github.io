@@ -12,8 +12,8 @@
         <id>https://p-s-vishnu.github.io/building-a-data-analysis-agent</id>
         <link href="https://p-s-vishnu.github.io/building-a-data-analysis-agent"/>
         <updated>2025-08-03T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Build a data analysis agent that turns natural language into SQL, runs queries against a database, and returns insights -- using LangGraph, FastAPI, Redis, LiteLLM, and MCP. Everything runs locally via Docker Compose.]]></summary>
-        <content type="html"><![CDATA[<p>Build a data analysis agent that turns natural language into SQL, runs queries against a database, and returns insights -- using LangGraph, FastAPI, Redis, LiteLLM, and MCP. Everything runs locally via Docker Compose.</p>
+        <summary type="html"><![CDATA[Build a data analysis agent that turns natural language into SQL, runs queries against a database, and returns insights using LangGraph, FastAPI, Redis, LiteLLM, and MCP. Everything runs locally via Docker Compose.]]></summary>
+        <content type="html"><![CDATA[<p>Build a data analysis agent that turns natural language into SQL, runs queries against a database, and returns insights using LangGraph, FastAPI, Redis, LiteLLM, and MCP. Everything runs locally via Docker Compose.</p>
 <h2 class="anchor anchorTargetStickyNavbar_xRYd" id="tldr">TL;DR<a href="https://p-s-vishnu.github.io/building-a-data-analysis-agent#tldr" class="hash-link" aria-label="Direct link to TL;DR" title="Direct link to TL;DR" translate="no">​</a></h2>
 <ul>
 <li class=""><strong>Natural language to SQL</strong> agent backed by a sample e-commerce database</li>
