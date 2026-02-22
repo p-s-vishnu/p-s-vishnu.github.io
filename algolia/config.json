@@ -1,7 +1,7 @@
 {
   "index_name": "psvishnu-blogs",
-  "start_urls": ["https://p-s-vishnu.github.io"],
-  "sitemap_urls": ["https://p-s-vishnu.github.io/sitemap.xml"],
+  "start_urls": ["https://www.vishnups.com"],
+  "sitemap_urls": ["https://www.vishnups.com/sitemap.xml"],
   "sitemap_alternate_links": true,
   "stop_urls": ["/search"],
   "selectors": {

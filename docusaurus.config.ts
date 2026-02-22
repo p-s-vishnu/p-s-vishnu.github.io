@@ -53,7 +53,7 @@ const config: Config = {
   ],
 
   // Set the production url of your site here
-  url: 'https://p-s-vishnu.github.io', // Updated with your GitHub Pages URL
+  url: 'https://www.vishnups.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/', // Set to '/' for custom domain deployment on GitHub Pages
