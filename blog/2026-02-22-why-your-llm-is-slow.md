@@ -8,6 +8,18 @@ Recently came across a post explaining these papers and thought it worth sharing
 
 <!-- truncate -->
 
+## TLDR
+
+| Concept | Layer | Key Win | Remember This |
+|---------|-------|---------|---------------|
+| FlashAttention | Compute | 2-6x attention speedup | Tiling + IO-awareness |
+| PagedAttention | Memory | Less than 4% waste (was 60-80%) | Virtual memory for KV cache |
+| Speculative Decoding | Generation | 2-3.6x faster decoding | Draft-then-verify |
+| Heterogeneous Serving | Infrastructure | Up to 77% cost savings | Right GPU for right job |
+| DistServe | Architecture | 7.4x more requests | Split prefill from decoding |
+
+---
+
 ## 1. FlashAttention - Compute Optimisation
 
 **The problem:** Attention is slow not because of maths, but because of memory traffic. GPUs have fast on-chip memory (SRAM, ~19TB/s) and slow main memory (HBM, ~2TB/s). Standard attention keeps shuffling data between them.
@@ -96,18 +108,6 @@ Running both on the same GPU is like asking one chef to do both bulk meal prep a
 | SLO compliance | Over 90% of requests meet latency targets |
 
 **Analogy:** A restaurant with a separate prep kitchen (high-volume chopping) and a plating station (precision finishing), connected by a runner.
-
----
-
-## Quick Reference
-
-| Concept | Layer | Key Win | Remember This |
-|---------|-------|---------|---------------|
-| FlashAttention | Compute | 2-6x attention speedup | Tiling + IO-awareness |
-| PagedAttention | Memory | Less than 4% waste (was 60-80%) | Virtual memory for KV cache |
-| Speculative Decoding | Generation | 2-3.6x faster decoding | Draft-then-verify |
-| Heterogeneous Serving | Infrastructure | Up to 77% cost savings | Right GPU for right job |
-| DistServe | Architecture | 7.4x more requests | Split prefill from decoding |
 
 ---
 
