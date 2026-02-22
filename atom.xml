@@ -2,11 +2,75 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://p-s-vishnu.github.io/</id>
     <title>Vishnu P.S. Blog</title>
-    <updated>2025-08-03T00:00:00.000Z</updated>
+    <updated>2026-02-22T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://p-s-vishnu.github.io/"/>
     <subtitle>Vishnu P.S. Blog</subtitle>
     <icon>https://p-s-vishnu.github.io/img/old/icon_minion.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Why Your LLM Is Slow (And the 5 Papers That Fix It)]]></title>
+        <id>https://p-s-vishnu.github.io/why-your-llm-is-slow</id>
+        <link href="https://p-s-vishnu.github.io/why-your-llm-is-slow"/>
+        <updated>2026-02-22T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Recently came across a post explaining these papers and thought it worth sharing with a quick breakdown.]]></summary>
+        <content type="html"><![CDATA[<p>Recently came across a post explaining these papers and thought it worth sharing with a quick breakdown.</p>
+<h2 class="anchor anchorTargetStickyNavbar_xRYd" id="1-flashattention---compute-optimisation">1. FlashAttention - Compute Optimisation<a href="https://p-s-vishnu.github.io/why-your-llm-is-slow#1-flashattention---compute-optimisation" class="hash-link" aria-label="Direct link to 1. FlashAttention - Compute Optimisation" title="Direct link to 1. FlashAttention - Compute Optimisation" translate="no">​</a></h2>
+<p><strong>The problem:</strong> Attention is slow not because of maths, but because of memory traffic. GPUs have fast on-chip memory (SRAM, ~19TB/s) and slow main memory (HBM, ~2TB/s). Standard attention keeps shuffling data between them.</p>
+<p><strong>How it works:</strong> Instead of computing the full N×N attention matrix at once, FlashAttention tiles it into small blocks that fit in fast SRAM. It uses an "online softmax" trick to get exact results incrementally - no approximation.</p>
+<p><strong>Analogy:</strong> Instead of carrying all your groceries inside in one impossible armful, you make smart small trips - but you planned the route so well it's actually faster.</p>
+<table><thead><tr><th>Version</th><th>Speedup</th><th>GPU Utilisation</th></tr></thead><tbody><tr><td>v1</td><td>2-3x vs standard</td><td>25-40%</td></tr><tr><td>v2</td><td>2x on top of v1</td><td>50-73%</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_xRYd" id="2-pagedattention---memory-management">2. PagedAttention - Memory Management<a href="https://p-s-vishnu.github.io/why-your-llm-is-slow#2-pagedattention---memory-management" class="hash-link" aria-label="Direct link to 2. PagedAttention - Memory Management" title="Direct link to 2. PagedAttention - Memory Management" translate="no">​</a></h2>
+<p><strong>The problem:</strong> Each request stores a KV cache (the model's "memory" of past tokens). Traditional systems pre-allocate memory for the worst case, wasting 60-80% of GPU memory. This limits how many requests you can batch together.</p>
+<p><strong>How it works:</strong> Borrows the virtual memory paging concept from operating systems. KV cache is split into fixed-size blocks that can be scattered anywhere in GPU memory. A block table maps logical to physical locations. Memory is allocated on-demand as tokens are generated.</p>
+<p><strong>Analogy:</strong> Instead of reserving an entire bookshelf per person (wasteful), you let people's books sit on any available shelf and give them a card catalogue to find them.</p>
+<table><thead><tr><th>Metric</th><th>Result</th></tr></thead><tbody><tr><td>Memory waste</td><td>60-80% to less than 4%</td></tr><tr><td>Throughput vs HuggingFace</td><td>24x</td></tr><tr><td>Throughput vs prior SOTA</td><td>2-4x</td></tr></tbody></table>
+<p><strong>Why it matters:</strong> Memory efficiency means larger batch sizes, more requests per GPU, and lower cost. This is why vLLM became the industry standard for LLM serving.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_xRYd" id="3-speculative-decoding---faster-token-generation">3. Speculative Decoding - Faster Token Generation<a href="https://p-s-vishnu.github.io/why-your-llm-is-slow#3-speculative-decoding---faster-token-generation" class="hash-link" aria-label="Direct link to 3. Speculative Decoding - Faster Token Generation" title="Direct link to 3. Speculative Decoding - Faster Token Generation" translate="no">​</a></h2>
+<p><strong>The problem:</strong> LLMs generate tokens one at a time, each requiring a full forward pass through billions of parameters. The GPU is massively underutilised - like hiring 1,000 workers to carry one brick at a time.</p>
+<p><strong>Two approaches:</strong></p>
+<p><strong>Speculative Sampling (DeepMind):</strong> A small fast "draft" model guesses the next k tokens. The big model verifies all k in one forward pass. If the guesses match, you got k tokens for the price of roughly 1. Mathematically guaranteed to produce identical output.</p>
+<p><strong>Medusa (Cai et al., Princeton/UIUC):</strong> Instead of a separate model, bolt extra "prediction heads" onto the main model. Each head predicts future tokens in parallel. Simpler deployment (one model), but requires fine-tuning.</p>
+<table><thead><tr><th>Approach</th><th>Speedup</th><th>Trade-off</th></tr></thead><tbody><tr><td>Speculative Sampling</td><td>2-2.5x</td><td>Need two models</td></tr><tr><td>Medusa-2</td><td>2.3-3.6x</td><td>Need to fine-tune heads</td></tr></tbody></table>
+<p><strong>Analogy:</strong> Instead of asking the CEO to write a memo word by word, have an intern draft 5 sentences, then the CEO reviews them all at once - keeping what's good, rewriting what's not.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_xRYd" id="4-heterogeneous-gpu-serving---cost-optimisation">4. Heterogeneous GPU Serving - Cost Optimisation<a href="https://p-s-vishnu.github.io/why-your-llm-is-slow#4-heterogeneous-gpu-serving---cost-optimisation" class="hash-link" aria-label="Direct link to 4. Heterogeneous GPU Serving - Cost Optimisation" title="Direct link to 4. Heterogeneous GPU Serving - Cost Optimisation" translate="no">​</a></h2>
+<p><strong>The problem:</strong> Companies buy expensive A100s for everything, but not all requests need top-tier hardware. Short chat messages don't need the same GPU as processing 100-page documents.</p>
+<p><strong>Two approaches:</strong></p>
+<p><strong>Metis (training-focused):</strong> Automatically figures out how to split training across mixed GPU types with smart load balancing. Result: 1-8.4x speedup.</p>
+<p><strong>Melange (inference-focused):</strong> Formulates GPU selection as a bin-packing problem - which mix of cheap and expensive GPUs minimises cost while meeting latency targets?</p>
+<table><thead><tr><th>Workload</th><th>Cost Savings</th></tr></thead><tbody><tr><td>Short chat</td><td>up to 77%</td></tr><tr><td>Long documents</td><td>33%</td></tr><tr><td>Mixed</td><td>51%</td></tr></tbody></table>
+<p><strong>Analogy:</strong> Instead of sending limousines for every taxi ride, dispatch the right vehicle for each trip - sedans for solo riders, vans for groups.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_xRYd" id="5-distserve---disaggregated-inference">5. DistServe - Disaggregated Inference<a href="https://p-s-vishnu.github.io/why-your-llm-is-slow#5-distserve---disaggregated-inference" class="hash-link" aria-label="Direct link to 5. DistServe - Disaggregated Inference" title="Direct link to 5. DistServe - Disaggregated Inference" translate="no">​</a></h2>
+<p><strong>The problem:</strong> LLM inference has two phases with opposite needs:</p>
+<ul>
+<li class=""><strong>Prefill</strong> (process the prompt): wants massive parallelism, high throughput</li>
+<li class=""><strong>Decoding</strong> (generate tokens): wants low latency, small batches</li>
+</ul>
+<p>Running both on the same GPU is like asking one chef to do both bulk meal prep and delicate plating simultaneously - neither goes well.</p>
+<p><strong>How it works:</strong> Physically separate prefill and decoding onto different GPU clusters, each tuned for its workload. After prefill generates the KV cache, it is shipped to the decoding cluster.</p>
+<table><thead><tr><th>Metric</th><th>Result</th></tr></thead><tbody><tr><td>Goodput vs vLLM (requests meeting SLO/s)</td><td>7.4x more</td></tr><tr><td>SLO compliance</td><td>Over 90% of requests meet latency targets</td></tr></tbody></table>
+<p><strong>Analogy:</strong> A restaurant with a separate prep kitchen (high-volume chopping) and a plating station (precision finishing), connected by a runner.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_xRYd" id="quick-reference">Quick Reference<a href="https://p-s-vishnu.github.io/why-your-llm-is-slow#quick-reference" class="hash-link" aria-label="Direct link to Quick Reference" title="Direct link to Quick Reference" translate="no">​</a></h2>
+<table><thead><tr><th>Concept</th><th>Layer</th><th>Key Win</th><th>Remember This</th></tr></thead><tbody><tr><td>FlashAttention</td><td>Compute</td><td>2-6x attention speedup</td><td>Tiling + IO-awareness</td></tr><tr><td>PagedAttention</td><td>Memory</td><td>Less than 4% waste (was 60-80%)</td><td>Virtual memory for KV cache</td></tr><tr><td>Speculative Decoding</td><td>Generation</td><td>2-3.6x faster decoding</td><td>Draft-then-verify</td></tr><tr><td>Heterogeneous Serving</td><td>Infrastructure</td><td>Up to 77% cost savings</td><td>Right GPU for right job</td></tr><tr><td>DistServe</td><td>Architecture</td><td>7.4x more requests</td><td>Split prefill from decoding</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_xRYd" id="references">References<a href="https://p-s-vishnu.github.io/why-your-llm-is-slow#references" class="hash-link" aria-label="Direct link to References" title="Direct link to References" translate="no">​</a></h2>
+<ol>
+<li class="">Dao et al. (2022) : <a href="https://arxiv.org/abs/2205.14135" target="_blank" rel="noopener noreferrer" class="">FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness</a></li>
+<li class="">Dao (2023) : <a href="https://arxiv.org/abs/2307.08691" target="_blank" rel="noopener noreferrer" class="">FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning</a></li>
+<li class="">Kwon et al. (2023) : <a href="https://arxiv.org/abs/2309.06852" target="_blank" rel="noopener noreferrer" class="">Efficient Memory Management for Large Language Model Serving with PagedAttention</a></li>
+<li class="">Chen et al. (2023) : <a href="https://arxiv.org/abs/2211.17192" target="_blank" rel="noopener noreferrer" class="">Accelerating Large Language Model Decoding with Speculative Sampling</a></li>
+<li class="">Cai et al. (2024) : <a href="https://arxiv.org/abs/2401.02659" target="_blank" rel="noopener noreferrer" class="">Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads</a></li>
+<li class="">Um et al. (2022) : <a href="https://arxiv.org/abs/2208.14226" target="_blank" rel="noopener noreferrer" class="">Metis: Fast Automatic Distributed Training on Heterogeneous GPUs</a></li>
+<li class="">Griggs et al. (2024) : <a href="https://arxiv.org/abs/2404.14527" target="_blank" rel="noopener noreferrer" class="">Mélange: Cost Efficient Large Language Model Serving by Exploiting GPU Heterogeneity</a></li>
+<li class="">Zhong et al. (2024) : <a href="https://arxiv.org/abs/2401.09670" target="_blank" rel="noopener noreferrer" class="">DistServe: Disaggregating Prefill and Decoding for Goodput-Optimized LLM Serving</a></li>
+</ol>]]></content>
+        <category label="LLM" term="LLM"/>
+        <category label="MLOps" term="MLOps"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Building a Production Data Analysis Agent]]></title>
         <id>https://p-s-vishnu.github.io/building-a-data-analysis-agent</id>
