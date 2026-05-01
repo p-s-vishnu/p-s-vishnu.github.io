@@ -19,7 +19,7 @@ The article is divided into two sections, For those who want the quick low-down,
 
 In a nutshell, the setup is humming 1500 micro-services and ~ 9000 pods in production as of 2019.
 
-**Infra overview —** Below are the tools and system architecture for the payment system
+**Infra overview -** Below are the tools and system architecture for the payment system
 
 1. **_Compute_** Data Centres (DCs) process incoming requests which get redirected to Micro-services running on [Kubernetes](https://kubernetes.io/).
 2. **_Data store:_** [Apache Cassandra](https://cassandra.apache.org/_/index.html) & AWS S3 for persistent data storage
@@ -71,7 +71,7 @@ The necessity for a data centre arises from the limitation posed by payment prov
 
 **Response:** It follows a similar reverse path and is returned to the terminal.
 
-If you want to know how Monzo secures its application for IP compliance you can read the article — [How we secure Monzo’s banking platform](https://monzo.com/blog/2022/03/31/how-we-secure-monzos-banking-platform).
+If you want to know how Monzo secures its application for IP compliance you can read the article - [How we secure Monzo’s banking platform](https://monzo.com/blog/2022/03/31/how-we-secure-monzos-banking-platform).
 
 ## 2. Compute
 
@@ -79,7 +79,7 @@ As mentioned earlier, there is a fleet of 1500 micro-services and ~ 9000 pods in
 
 The question arises: How are they able to run so many nodes in the cluster?
 
-- It converges to one reason — consistency. Across teams, the company upholds a uniformity of language, design patterns, and infrastructure. This enables the orchestration of a multitude of nodes seamlessly.
+- It converges to one reason - consistency. Across teams, the company upholds a uniformity of language, design patterns, and infrastructure. This enables the orchestration of a multitude of nodes seamlessly.
 - Additionally, all the code is written in Go which helps reduce the docker image size and expedites the container creation process.
 
 For context, the below is not a neural network but rather micro-services running and communicating on a single day.
@@ -157,7 +157,7 @@ Prometheus is “shared out” to various functional domains with two replicas e
 
 Users necessitate an effortless means to query logs, preferably centralised for comprehensive search capabilities.
 The logs should be saved for longer than 24 hours.
-Solution — Thanos as a sidecar to the Prometheus servers
+Solution - Thanos as a sidecar to the Prometheus servers
 
 Emulates multiple Prometheus servers’ query search as a single one with Thanos. It uses Thanos query which fans out to all the sidecar applications retrieving the location of the requested data i.e. parallely searching for the requested data.
 To meet the second requirement, Thanos takes periodic strides, saving data to the S3 bucket, ensuring a repository that surpasses the 24-hour timeframe

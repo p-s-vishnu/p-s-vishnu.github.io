@@ -26,7 +26,7 @@ The paper introduces several key technical concepts to formalise the origins of 
 *   **Arbitrary-Fact Hallucinations and Singletons:** For facts that have no learnable pattern (e.g., a person's birthday), the model's ability to recall them depends on their frequency in the training data. The paper connects the hallucination rate to the "singleton rate" (`sr`), which is the fraction of training prompts that appear only once.
     *   **Theorem 2** states that for these types of facts, the expected error rate is approximately equal to the singleton rate (`err ≈ sr`). If 20% of birthday facts in the training data are singletons, a base model is expected to hallucinate on at least 20% of birthday-related queries.
 
-*   **Poor Models and Agnostic Learning:** Hallucinations can also arise when a model's architecture is fundamentally unsuited for a task. The paper connects this to the concept of `opt(G)` from agnostic learning—the best possible error rate achievable by any classifier within a given family `G`. If `opt(G)` is high for a certain task, then any model from that family is guaranteed to have a high error rate.
+*   **Poor Models and Agnostic Learning:** Hallucinations can also arise when a model's architecture is fundamentally unsuited for a task. The paper connects this to the concept of `opt(G)` from agnostic learning-the best possible error rate achievable by any classifier within a given family `G`. If `opt(G)` is high for a certain task, then any model from that family is guaranteed to have a high error rate.
     *   An example is a token-based LLM being asked to count characters, a task for which its representation may be ill-suited, whereas a model with a reasoning mechanism might perform better.
 
 ### Important Sections
@@ -50,5 +50,5 @@ This section offers a concrete, actionable solution aimed at the entire ML commu
 *   **Key Insight:** To build more trustworthy models, the rules of the game must change. Instead of creating more specialised (and often ignored) hallucination benchmarks, the authors propose modifying the primary benchmarks themselves. They suggest adding instructions to prompts that specify a confidence threshold `t` and an associated penalty for wrong answers. For example:
     > "Answer only if you are >90% confident. Correct answers get 1 point, 'I don't know' gets 0 points, and incorrect answers get -9 points."
 
-*   This makes the optimal strategy for the model one of "behavioural calibration"—it should only answer if its internal confidence is higher than the stated threshold `t`. By making the threshold explicit in the prompt, a single model can learn to perform optimally across all settings, steering the field towards models that are more honest about their uncertainty [1].
+*   This makes the optimal strategy for the model one of "behavioural calibration"-it should only answer if its internal confidence is higher than the stated threshold `t`. By making the threshold explicit in the prompt, a single model can learn to perform optimally across all settings, steering the field towards models that are more honest about their uncertainty [1].
 

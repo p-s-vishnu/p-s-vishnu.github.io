@@ -37,8 +37,6 @@ function ProjectCard({
       transitionSpeed={1500}
       scale={scaleOnHover}
       gyroscope={typeof window !== 'undefined' && 'DeviceOrientationEvent' in window}
-      role="region"
-      aria-label={`${title} project card`}
     >
       <Link to={githubLink} className={styles.projectLink}>
         {imageUrl && (

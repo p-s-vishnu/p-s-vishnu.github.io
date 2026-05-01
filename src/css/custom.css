@@ -1,7 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css);
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css);
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/solid.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 /**
  * Global Styles and Variables
@@ -18,41 +15,44 @@
     height: auto;
     display: block;
     margin: 0 auto;
+    border-radius: 6px;
 }
 
 :root {
-    --ifm-color-primary: #3f51b5;
-    --ifm-color-primary-dark: #303f9f;
-    --ifm-color-primary-darker: #283593;
-    --ifm-color-primary-darkest: #1a237e;
-    --ifm-color-primary-light: #5c6bc0;
-    --ifm-color-primary-lighter: #7986cb;
-    --ifm-color-primary-lightest: #9fa8da;
-    --ifm-code-font-size: 95%;
-    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-    --ifm-background-color: #FFFFFF;
-    --ifm-background-surface-color: #F5F5F5;
-    --ifm-font-color-base: #212121;
-    --ifm-font-family-base: 'DM Sans', sans-serif;
+    --ifm-color-primary: #3b82f6;
+    --ifm-color-primary-dark: #2563eb;
+    --ifm-color-primary-darker: #1d4ed8;
+    --ifm-color-primary-darkest: #1e40af;
+    --ifm-color-primary-light: #60a5fa;
+    --ifm-color-primary-lighter: #93c5fd;
+    --ifm-color-primary-lightest: #bfdbfe;
+    --ifm-code-font-size: 92%;
+    --docusaurus-highlighted-code-line-bg: rgba(59, 130, 246, 0.08);
+    --ifm-background-color: #ffffff;
+    --ifm-background-surface-color: #f8fafc;
+    --ifm-font-color-base: #0f172a;
+    --ifm-font-color-secondary: #475569;
+    --ifm-font-family-base: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --ifm-heading-font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --ifm-font-family-monospace: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    --ifm-line-height-base: 1.65;
+    --ifm-heading-font-weight: 700;
+    --ifm-h1-font-size: 2.25rem;
 }
 
 [data-theme='dark'] {
-    --ifm-color-primary: #7f5af0;
-    --ifm-color-primary-dark: #6a48d0;
-    --ifm-color-primary-darker: #5536b0;
-    --ifm-color-primary-darkest: #402490;
-    --ifm-color-primary-light: #9472ff;
-    --ifm-color-primary-lighter: #a98bff;
-    --ifm-color-primary-lightest: #be9fff;
-    --ifm-background-color: #16161a;
-    --ifm-background-surface-color: #282828;
-    --ifm-font-color-base: #fffffe;
-    --ifm-font-color-secondary: #94a1b2;
-    --ifm-color-secondary: #72757e;
-    --ifm-color-tertiary: #2cb67d;
-    --ifm-color-stroke: #010101;
-    --ifm-code-font-size: 95%;
-    --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
+    --ifm-color-primary: #67e8f9;
+    --ifm-color-primary-dark: #22d3ee;
+    --ifm-color-primary-darker: #06b6d4;
+    --ifm-color-primary-darkest: #0891b2;
+    --ifm-color-primary-light: #a5f3fc;
+    --ifm-color-primary-lighter: #cffafe;
+    --ifm-color-primary-lightest: #ecfeff;
+    --ifm-background-color: #050714;
+    --ifm-background-surface-color: #0a0f24;
+    --ifm-font-color-base: #e0e7ff;
+    --ifm-font-color-secondary: #94a3b8;
+    --docusaurus-highlighted-code-line-bg: rgba(103, 232, 249, 0.10);
 }
 
 /**
@@ -61,28 +61,22 @@
 
 /* Navbar Styles */
 .navbar {
-    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.7);
     box-shadow: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
 }
 
-/* Only apply backdrop-filter on desktop (prevents mobile sidebar breakage) */
 @media (min-width: 997px) {
     .navbar {
-        backdrop-filter: blur(3px);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
     }
 }
 
 [data-theme='dark'] .navbar {
-    background-color: rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-@media (min-width: 997px) {
-    [data-theme='dark'] .navbar {
-        backdrop-filter: blur(3px);
-    }
+    background-color: rgba(11, 13, 18, 0.7);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.08);
 }
 
 .navbar--scrolled {
@@ -95,16 +89,16 @@
 }
 
 [data-theme='dark'] .navbar:not(.navbar--scrolled) {
-    background-color: transparent !important;
+    background-color: rgba(11, 13, 18, 0.7) !important;
 }
 
 /* Footer Styles */
 .footer--dark {
-    --ifm-footer-background-color: #16161a;
+    --ifm-footer-background-color: #0b0d12;
 }
 
 .footer {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(148, 163, 184, 0.08);
 }
 
 .footer__links {
@@ -130,20 +124,24 @@
     list-style: none;
 }
 
-.footer__item a i {
-    font-size: 1.5rem;
+.footer__item a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     color: var(--ifm-footer-link-color);
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
-.footer__item a:hover i {
+.footer__item a:hover {
     color: var(--ifm-color-primary);
-    transform: scale(1.1);
+    transform: translateY(-1px);
 }
 
 .footer__copyright {
     text-align: center;
     margin-top: 1rem;
+    color: var(--ifm-font-color-secondary);
+    font-size: 0.85rem;
 }
 
 /* Code Block Styles */
@@ -151,8 +149,17 @@
     font-size: 0.85em;
 }
 
-:not(pre)>code {
-    font-size: 0.85em;
+:not(pre) > code {
+    font-size: 0.88em;
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.12);
+    color: var(--ifm-color-primary-darker);
+}
+
+[data-theme='dark'] :not(pre) > code {
+    background: rgba(103, 232, 249, 0.12);
+    border-color: rgba(103, 232, 249, 0.18);
+    color: var(--ifm-color-primary-lightest);
 }
 
 /**
@@ -165,44 +172,609 @@
 }
 
 /* Accessibility - Focus Visible Styles */
+*:focus-visible {
+    outline: 2px solid var(--ifm-color-primary);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
 .navbar__link:focus-visible,
 .navbar__item a:focus-visible,
 .footer__item a:focus-visible,
 .menu__link:focus-visible {
-  outline: 2px solid var(--ifm-color-primary);
-  outline-offset: 2px;
-  border-radius: 4px;
+    outline: 2px solid var(--ifm-color-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
 }
 
 /* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 
-  .navbar,
-  .footer__item a i {
-    transition: none;
-  }
+    .navbar,
+    .footer__item a {
+        transition: none;
+    }
 }
 
 /* Additional responsive breakpoints */
 @media screen and (max-width: 1024px) {
-  .navbar__items {
-    gap: 0.5rem;
-  }
+    .navbar__items {
+        gap: 0.5rem;
+    }
 }
 
 @media screen and (max-width: 480px) {
-  .navbar__title {
-    font-size: 1rem;
-  }
+    .navbar__title {
+        font-size: 1rem;
+    }
 
-  .footer__items {
+    .footer__items {
+        gap: 1rem;
+    }
+}
+
+/**
+ * Landing Page Styles
+ */
+.home-hero {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 3rem;
+    text-align: left;
+}
+
+.home-hero h1 {
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+.home-hero p.lead {
+    font-size: 1.15rem;
+    color: var(--ifm-font-color-secondary);
+    max-width: 60ch;
+    margin-bottom: 1.75rem;
+}
+
+.home-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.home-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: 999px;
+    background: rgba(59, 130, 246, 0.08);
+    color: var(--ifm-color-primary-darker);
+    border: 1px solid rgba(59, 130, 246, 0.16);
+}
+
+[data-theme='dark'] .home-chip {
+    background: rgba(103, 232, 249, 0.1);
+    color: var(--ifm-color-primary-lightest);
+    border-color: rgba(103, 232, 249, 0.22);
+}
+
+.home-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.home-cta .button {
+    font-weight: 600;
+}
+
+.home-section {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 4rem;
+}
+
+.home-section h2 {
+    font-size: 1.5rem;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.25rem;
+}
+
+.home-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1rem;
-  }
+}
+
+.home-post-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    border-radius: 12px;
+    background: var(--ifm-background-surface-color);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    text-decoration: none;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+[data-theme='dark'] .home-post-card {
+    border-color: rgba(148, 163, 184, 0.12);
+}
+
+.home-post-card:hover {
+    text-decoration: none;
+    border-color: var(--ifm-color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.08);
+}
+
+.home-post-card .home-post-tag {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ifm-color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.home-post-card .home-post-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--ifm-font-color-base);
+    margin-bottom: 0.4rem;
+}
+
+.home-post-card .home-post-meta {
+    margin-top: auto;
+    font-size: 0.8rem;
+    color: var(--ifm-font-color-secondary);
+}
+
+/**
+ * About Page Styles
+ */
+.about-hero {
+    padding-bottom: 1.5rem;
+}
+
+.about-section {
+    padding-top: 0;
+    padding-bottom: 2.5rem;
+}
+
+.about-skills-group {
+    margin-bottom: 2rem;
+}
+
+.about-skills-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ifm-font-color-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+.about-skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+/* Timeline */
+.about-timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.about-timeline-item {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    background: var(--ifm-background-surface-color);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-theme='dark'] .about-timeline-item {
+    border-color: rgba(148, 163, 184, 0.12);
+}
+
+.about-timeline-item:hover {
+    border-color: var(--ifm-color-primary);
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.07);
+}
+
+.about-timeline-year {
+    flex-shrink: 0;
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+}
+
+.about-timeline-text {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--ifm-font-color-base);
+}
+
+/**
+ * Projects Page Styles
+ */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    align-items: start;
+}
+
+/**
+ * Glassmorphism overrides
+ * Layered over the base palette: indigo primary + violet/cyan ambient orbs.
+ * Light mode tints the background subtly so glass surfaces have something to blur.
+ */
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.55);
+    --glass-border: rgba(255, 255, 255, 0.65);
+    --glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.08);
+    --accent-cyan: #06b6d4;
+    --accent-lavender: #e0e7ff;
+}
+
+[data-theme='dark'] {
+    --glass-bg: rgba(20, 23, 31, 0.55);
+    --glass-border: rgba(148, 163, 184, 0.14);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+html, body {
+    background-color: var(--ifm-background-color);
+}
+
+[data-theme='light'] body {
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(59, 130, 246, 0.10), transparent 45%),
+      radial-gradient(circle at 92% 6%, rgba(6, 182, 212, 0.10), transparent 50%),
+      radial-gradient(circle at 50% 95%, rgba(34, 211, 238, 0.08), transparent 55%);
+    background-attachment: fixed;
+}
+
+[data-theme='dark'] body {
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(103, 232, 249, 0.18), transparent 45%),
+      radial-gradient(circle at 92% 6%, rgba(6, 182, 212, 0.16), transparent 50%),
+      radial-gradient(circle at 50% 95%, rgba(34, 211, 238, 0.10), transparent 55%);
+    background-attachment: fixed;
+}
+
+/* Decorative orbs behind the home hero */
+.home-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.home-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.55;
+}
+
+.home-orb--indigo {
+    width: 480px; height: 480px;
+    top: -120px; left: -100px;
+    background: radial-gradient(circle, #3b82f6 0%, transparent 70%);
+}
+
+.home-orb--violet {
+    width: 420px; height: 420px;
+    top: 80px; right: -120px;
+    background: radial-gradient(circle, #06b6d4 0%, transparent 70%);
+}
+
+.home-orb--cyan {
+    width: 380px; height: 380px;
+    bottom: -160px; left: 30%;
+    background: radial-gradient(circle, #22d3ee 0%, transparent 70%);
+    opacity: 0.35;
+}
+
+[data-theme='dark'] .home-orb {
+    opacity: 0.4;
+}
+
+[data-theme='dark'] .home-orb--cyan {
+    opacity: 0.22;
+}
+
+.home-hero,
+.home-section {
+    position: relative;
+    z-index: 1;
+}
+
+/* Glass card surface - applied to home post cards, about timeline items, and chips */
+.home-post-card,
+.about-timeline-item {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    box-shadow: var(--glass-shadow);
+}
+
+.home-post-card:hover,
+.about-timeline-item:hover {
+    border-color: var(--ifm-color-primary);
+    box-shadow: 0 12px 32px rgba(59, 130, 246, 0.18);
+    transform: translateY(-2px);
+}
+
+/* Von Restorff: visually elevate the most recent featured post */
+.home-post-card--featured {
+    background:
+      linear-gradient(135deg, rgba(59, 130, 246, 0.14), rgba(6, 182, 212, 0.10)),
+      var(--glass-bg);
+    border-color: rgba(59, 130, 246, 0.45);
+}
+
+[data-theme='dark'] .home-post-card--featured {
+    background:
+      linear-gradient(135deg, rgba(103, 232, 249, 0.22), rgba(6, 182, 212, 0.16)),
+      var(--glass-bg);
+    border-color: rgba(103, 232, 249, 0.5);
+}
+
+.home-post-card--featured .home-post-tag::before {
+    content: '★ ';
+    color: var(--ifm-color-primary);
+}
+
+/* Chips become glass too - used on home (now removed) and about page */
+.home-chip {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    color: var(--ifm-font-color-base);
+}
+
+[data-theme='dark'] .home-chip {
+    color: var(--ifm-font-color-base);
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
+}
+
+/* Navbar: stronger glass than the original tweak */
+.navbar {
+    background: var(--glass-bg) !important;
+    border-bottom: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+}
+
+[data-theme='dark'] .navbar:not(.navbar--scrolled) {
+    background: var(--glass-bg) !important;
+}
+
+/* Footer becomes a soft dark glass */
+.footer--dark {
+    background: linear-gradient(180deg, rgba(11, 13, 18, 0.85), rgba(11, 13, 18, 0.95));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+/* Buttons: glassy primary with subtle gradient (Fitts: keep them large) */
+.button.button--primary {
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.28);
+}
+
+.button.button--primary:hover {
+    background: linear-gradient(135deg, #60a5fa, #2563eb);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.38);
+}
+
+.button.button--secondary {
+    background: var(--glass-bg);
+    color: var(--ifm-font-color-base);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.button.button--secondary:hover {
+    background: rgba(255, 255, 255, 0.75);
+    color: var(--ifm-color-primary-darker);
+}
+
+[data-theme='dark'] .button.button--secondary:hover {
+    background: rgba(30, 35, 45, 0.7);
+    color: var(--ifm-color-primary-lightest);
+}
+
+/* Reduced transparency fallback (a11y) */
+@media (prefers-reduced-transparency: reduce) {
+    .home-post-card,
+    .about-timeline-item,
+    .home-chip,
+    .navbar,
+    .button.button--secondary {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: var(--ifm-background-surface-color);
+    }
+    .home-orb { display: none; }
+}
+
+/**
+ * visionOS-style refinements (layer 2)
+ * Bigger blur + saturate, inner top-edge highlight, noise grain, tinted shadow,
+ * softer corners. Built on top of the base glass layer above so we don't repaint
+ * the whole stylesheet.
+ */
+:root {
+    --glass-radius: 20px;
+    --glass-radius-lg: 28px;
+    --glass-blur: blur(28px) saturate(180%);
+    --glass-shadow-tint: 0 20px 60px rgba(59, 130, 246, 0.14), 0 4px 14px rgba(0, 0, 0, 0.04);
+    /* Fine SVG noise - adds tactile grain so glass doesn't look like flat plastic */
+    --glass-noise: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.4 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
+}
+
+[data-theme='dark'] {
+    --glass-shadow-tint: 0 20px 60px rgba(0, 0, 0, 0.45), 0 4px 14px rgba(59, 130, 246, 0.12);
+}
+
+/* Larger, softer orbs with a third magenta tone for visionOS feel */
+.home-orb--indigo {
+    width: 560px; height: 560px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.9) 0%, transparent 65%);
+    filter: blur(110px);
+}
+
+.home-orb--violet {
+    width: 520px; height: 520px;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.85) 0%, transparent 65%);
+    filter: blur(110px);
+}
+
+.home-orb--cyan {
+    width: 460px; height: 460px;
+    background: radial-gradient(circle, rgba(224, 231, 255, 0.55) 0%, transparent 65%);
+    filter: blur(120px);
+    opacity: 0.45;
+}
+
+/* Refined glass surface - inner highlight + noise grain */
+.home-post-card,
+.about-timeline-item {
+    border-radius: var(--glass-radius);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    box-shadow: var(--glass-shadow-tint);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Top-edge inner highlight (visionOS signature ring of light) */
+.home-post-card::before,
+.about-timeline-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.05) 30%, transparent 70%);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+}
+
+[data-theme='dark'] .home-post-card::before,
+[data-theme='dark'] .about-timeline-item::before {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.02) 30%, transparent 70%);
+}
+
+/* Subtle noise grain layer */
+.home-post-card::after,
+.about-timeline-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--glass-noise);
+    background-size: 160px 160px;
+    opacity: 0.35;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    border-radius: inherit;
+    z-index: 0;
+}
+
+[data-theme='dark'] .home-post-card::after,
+[data-theme='dark'] .about-timeline-item::after {
+    opacity: 0.25;
+}
+
+.home-post-card > *,
+.about-timeline-item > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero feels more like a panel - rounded and lifted */
+.home-hero {
+    padding-top: 6rem;
+    padding-bottom: 3.5rem;
+}
+
+.home-hero h1 {
+    background: linear-gradient(135deg, var(--ifm-font-color-base) 0%, var(--ifm-color-primary) 60%, #06b6d4 100%);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+[data-theme='dark'] .home-hero h1 {
+    background: linear-gradient(135deg, #f1f5f9 0%, #93c5fd 60%, #67e8f9 100%);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Larger, glassier chips */
+.home-chip {
+    border-radius: 999px;
+    padding: 0.4rem 0.85rem;
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+}
+
+/* Featured post card: stronger gradient + soft glow */
+.home-post-card--featured {
+    box-shadow:
+      0 24px 60px rgba(59, 130, 246, 0.22),
+      0 4px 14px rgba(6, 182, 212, 0.12);
+}
+
+/* Navbar refinements */
+.navbar {
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+}
+
+/* Buttons - bigger, softer, with stronger shadow (Fitts's law) */
+.button.button--lg {
+    padding: 0.85rem 1.5rem;
+    border-radius: 14px;
+    font-size: 0.95rem;
 }

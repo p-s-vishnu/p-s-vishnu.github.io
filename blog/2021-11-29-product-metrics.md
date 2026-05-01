@@ -28,7 +28,7 @@ Some of the common product metrics used in product management.
    - ROI: Return on Investment - `The value is in %`
 
    ```math
-   ((Gain from investment – Cost of Investment) / Cost of Investment ) * 100
+   ((Gain from investment - Cost of Investment) / Cost of Investment ) * 100
    ```
 
    - LTV/CLV: Customer Lifetime Value.
