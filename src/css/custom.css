@@ -51,7 +51,7 @@
     --ifm-background-color: #0b0d12;
     --ifm-background-surface-color: #14171f;
     --ifm-font-color-base: #f1f5f9;
-    --ifm-font-color-secondary: #94a3b8;
+    --ifm-font-color-secondary: #cbd5e1;
     --docusaurus-highlighted-code-line-bg: rgba(129, 140, 248, 0.12);
 }
 
@@ -441,8 +441,8 @@
 }
 
 [data-theme='dark'] {
-    --glass-bg: rgba(20, 23, 31, 0.55);
-    --glass-border: rgba(148, 163, 184, 0.14);
+    --glass-bg: rgba(20, 23, 31, 0.72);
+    --glass-border: rgba(148, 163, 184, 0.18);
     --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
 }
 
@@ -777,4 +777,43 @@ html, body {
     padding: 0.85rem 1.5rem;
     border-radius: 14px;
     font-size: 0.95rem;
+}
+
+/**
+ * Contrast fixes for glass surfaces in dark mode.
+ * The inline-styled blurb on landing post cards uses var(--ifm-font-color-secondary).
+ * On translucent dark glass, slate-400 was too dim; force a brighter tone here.
+ */
+.home-post-card p,
+.home-post-card .home-post-meta {
+    color: var(--ifm-font-color-secondary);
+}
+
+[data-theme='dark'] .home-post-card p,
+[data-theme='dark'] .home-post-card .home-post-meta {
+    color: rgba(241, 245, 249, 0.78);
+}
+
+[data-theme='dark'] .home-post-card .home-post-title {
+    color: #f8fafc;
+}
+
+[data-theme='dark'] .home-post-card .home-post-tag {
+    color: var(--ifm-color-primary-light);
+}
+
+/* Secondary button must stay legible on glass */
+.button.button--secondary {
+    color: var(--ifm-font-color-base);
+}
+
+[data-theme='dark'] .button.button--secondary {
+    color: #f1f5f9 !important;
+    background: rgba(30, 35, 45, 0.7);
+    border-color: rgba(148, 163, 184, 0.25);
+}
+
+[data-theme='dark'] .button.button--secondary:hover {
+    color: #ffffff !important;
+    background: rgba(40, 46, 60, 0.8);
 }
