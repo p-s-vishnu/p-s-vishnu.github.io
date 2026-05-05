@@ -76,16 +76,7 @@ export default function Home(): React.ReactElement {
             >
               <span className="home-post-tag">{post.tag}</span>
               <span className="home-post-title">{post.title}</span>
-              <p
-                style={{
-                  margin: '0 0 0.75rem',
-                  fontSize: '0.9rem',
-                  color: 'var(--ifm-font-color-secondary)',
-                  lineHeight: 1.5,
-                }}
-              >
-                {post.blurb}
-              </p>
+              <p className="home-post-blurb">{post.blurb}</p>
               <span className="home-post-meta">{post.date}</span>
             </Link>
           ))}

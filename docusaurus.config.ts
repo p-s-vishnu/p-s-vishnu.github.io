@@ -19,6 +19,12 @@ const config: Config = {
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    experimental_faster: {
+      // LightningCSS preserves @media inside @layer in production builds,
+      // working around facebook/docusaurus#11567 (cssnano extracts media
+      // queries out of cascade layers, breaking customCss specificity).
+      lightningCssMinimizer: true,
+    },
   },
 
   // Client modules for browser-side functionality

@@ -40,18 +40,18 @@
     --ifm-h1-font-size: 2.25rem;
 }
 
-[data-theme='dark'] {
-    --ifm-color-primary: #a5b4fc;
-    --ifm-color-primary-dark: #818cf8;
-    --ifm-color-primary-darker: #6366f1;
-    --ifm-color-primary-darkest: #4f46e5;
-    --ifm-color-primary-light: #c7d2fe;
-    --ifm-color-primary-lighter: #ddd6fe;
-    --ifm-color-primary-lightest: #e0e7ff;
-    --ifm-background-color: #0b0d12;
-    --ifm-background-surface-color: #14171f;
-    --ifm-font-color-base: #f1f5f9;
-    --ifm-font-color-secondary: #cbd5e1;
+html[data-theme='dark'] {
+    --ifm-color-primary: #a5b4fc !important;
+    --ifm-color-primary-dark: #818cf8 !important;
+    --ifm-color-primary-darker: #6366f1 !important;
+    --ifm-color-primary-darkest: #4f46e5 !important;
+    --ifm-color-primary-light: #c7d2fe !important;
+    --ifm-color-primary-lighter: #ddd6fe !important;
+    --ifm-color-primary-lightest: #e0e7ff !important;
+    --ifm-background-color: #0b0d12 !important;
+    --ifm-background-surface-color: #14171f !important;
+    --ifm-font-color-base: #f1f5f9 !important;
+    --ifm-font-color-secondary: #cbd5e1 !important;
     --docusaurus-highlighted-code-line-bg: rgba(129, 140, 248, 0.12);
 }
 
@@ -74,7 +74,7 @@
     }
 }
 
-[data-theme='dark'] .navbar {
+html[data-theme='dark'] .navbar {
     background-color: rgba(11, 13, 18, 0.7);
     border-bottom: 1px solid rgba(148, 163, 184, 0.08);
 }
@@ -88,7 +88,7 @@
     --ifm-navbar-link-color: var(--ifm-font-color-base);
 }
 
-[data-theme='dark'] .navbar:not(.navbar--scrolled) {
+html[data-theme='dark'] .navbar:not(.navbar--scrolled) {
     background-color: rgba(11, 13, 18, 0.7) !important;
 }
 
@@ -156,7 +156,7 @@
     color: var(--ifm-color-primary-darker);
 }
 
-[data-theme='dark'] :not(pre) > code {
+html[data-theme='dark'] :not(pre) > code {
     background: rgba(129, 140, 248, 0.12);
     border-color: rgba(129, 140, 248, 0.18);
     color: var(--ifm-color-primary-lightest);
@@ -263,7 +263,7 @@
     border: 1px solid rgba(99, 102, 241, 0.16);
 }
 
-[data-theme='dark'] .home-chip {
+html[data-theme='dark'] .home-chip {
     background: rgba(129, 140, 248, 0.1);
     color: var(--ifm-color-primary-lightest);
     border-color: rgba(129, 140, 248, 0.22);
@@ -309,7 +309,7 @@
     cursor: pointer;
 }
 
-[data-theme='dark'] .home-post-card {
+html[data-theme='dark'] .home-post-card {
     border-color: rgba(148, 163, 184, 0.12);
 }
 
@@ -396,7 +396,7 @@
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-[data-theme='dark'] .about-timeline-item {
+html[data-theme='dark'] .about-timeline-item {
     border-color: rgba(148, 163, 184, 0.12);
 }
 
@@ -440,10 +440,10 @@
     --accent-mint: #a7f3d0;
 }
 
-[data-theme='dark'] {
-    --glass-bg: rgba(20, 23, 31, 0.72);
-    --glass-border: rgba(148, 163, 184, 0.18);
-    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+html[data-theme='dark'] {
+    --glass-bg: rgba(20, 23, 31, 0.72) !important;
+    --glass-border: rgba(148, 163, 184, 0.18) !important;
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.35) !important;
 }
 
 html, body {
@@ -458,7 +458,7 @@ html, body {
     background-attachment: fixed;
 }
 
-[data-theme='dark'] body {
+html[data-theme='dark'] body {
     background-image:
       radial-gradient(circle at 12% 8%, rgba(129, 140, 248, 0.18), transparent 45%),
       radial-gradient(circle at 92% 6%, rgba(20, 184, 166, 0.16), transparent 50%),
@@ -501,11 +501,11 @@ html, body {
     opacity: 0.35;
 }
 
-[data-theme='dark'] .home-orb {
+html[data-theme='dark'] .home-orb {
     opacity: 0.4;
 }
 
-[data-theme='dark'] .home-orb--cyan {
+html[data-theme='dark'] .home-orb--cyan {
     opacity: 0.22;
 }
 
@@ -540,7 +540,7 @@ html, body {
     border-color: rgba(99, 102, 241, 0.45);
 }
 
-[data-theme='dark'] .home-post-card--featured {
+html[data-theme='dark'] .home-post-card--featured {
     background:
       linear-gradient(135deg, rgba(129, 140, 248, 0.22), rgba(20, 184, 166, 0.16)),
       var(--glass-bg);
@@ -561,7 +561,7 @@ html, body {
     color: var(--ifm-font-color-base);
 }
 
-[data-theme='dark'] .home-chip {
+html[data-theme='dark'] .home-chip {
     color: var(--ifm-font-color-base);
     background: var(--glass-bg);
     border-color: var(--glass-border);
@@ -575,7 +575,7 @@ html, body {
     -webkit-backdrop-filter: blur(20px) saturate(160%);
 }
 
-[data-theme='dark'] .navbar:not(.navbar--scrolled) {
+html[data-theme='dark'] .navbar:not(.navbar--scrolled) {
     background: var(--glass-bg) !important;
 }
 
@@ -611,7 +611,7 @@ html, body {
     color: var(--ifm-color-primary-darker);
 }
 
-[data-theme='dark'] .button.button--secondary:hover {
+html[data-theme='dark'] .button.button--secondary:hover {
     background: rgba(30, 35, 45, 0.7);
     color: var(--ifm-color-primary-lightest);
 }
@@ -645,7 +645,7 @@ html, body {
     --glass-noise: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.4 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
 }
 
-[data-theme='dark'] {
+html[data-theme='dark'] {
     --glass-shadow-tint: 0 20px 60px rgba(0, 0, 0, 0.45), 0 4px 14px rgba(99, 102, 241, 0.12);
 }
 
@@ -699,8 +699,8 @@ html, body {
     z-index: 1;
 }
 
-[data-theme='dark'] .home-post-card::before,
-[data-theme='dark'] .about-timeline-item::before {
+html[data-theme='dark'] .home-post-card::before,
+html[data-theme='dark'] .about-timeline-item::before {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.02) 30%, transparent 70%);
 }
 
@@ -719,8 +719,8 @@ html, body {
     z-index: 0;
 }
 
-[data-theme='dark'] .home-post-card::after,
-[data-theme='dark'] .about-timeline-item::after {
+html[data-theme='dark'] .home-post-card::after,
+html[data-theme='dark'] .about-timeline-item::after {
     opacity: 0.25;
 }
 
@@ -744,7 +744,7 @@ html, body {
     color: transparent;
 }
 
-[data-theme='dark'] .home-hero h1 {
+html[data-theme='dark'] .home-hero h1 {
     background: linear-gradient(135deg, #f1f5f9 0%, #99f6e4 60%, #5eead4 100%);
     -webkit-background-clip: text;
             background-clip: text;
@@ -784,21 +784,27 @@ html, body {
  * The inline-styled blurb on landing post cards uses var(--ifm-font-color-secondary).
  * On translucent dark glass, slate-400 was too dim; force a brighter tone here.
  */
-.home-post-card p,
+.home-post-card .home-post-blurb {
+    margin: 0 0 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #475569;
+}
+
 .home-post-card .home-post-meta {
-    color: var(--ifm-font-color-secondary);
+    color: #64748b;
 }
 
-[data-theme='dark'] .home-post-card p,
-[data-theme='dark'] .home-post-card .home-post-meta {
-    color: rgba(241, 245, 249, 0.78);
+html[data-theme='dark'] .home-post-card .home-post-blurb,
+html[data-theme='dark'] .home-post-card .home-post-meta {
+    color: #e2e8f0 !important;
 }
 
-[data-theme='dark'] .home-post-card .home-post-title {
+html[data-theme='dark'] .home-post-card .home-post-title {
     color: #f8fafc;
 }
 
-[data-theme='dark'] .home-post-card .home-post-tag {
+html[data-theme='dark'] .home-post-card .home-post-tag {
     color: var(--ifm-color-primary-light);
 }
 
@@ -807,13 +813,13 @@ html, body {
     color: var(--ifm-font-color-base);
 }
 
-[data-theme='dark'] .button.button--secondary {
+html[data-theme='dark'] .button.button--secondary {
     color: #f1f5f9 !important;
     background: rgba(30, 35, 45, 0.7);
     border-color: rgba(148, 163, 184, 0.25);
 }
 
-[data-theme='dark'] .button.button--secondary:hover {
+html[data-theme='dark'] .button.button--secondary:hover {
     color: #ffffff !important;
     background: rgba(40, 46, 60, 0.8);
 }
