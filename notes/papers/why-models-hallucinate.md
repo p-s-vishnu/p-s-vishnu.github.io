@@ -1,5 +1,6 @@
 ---
 title: Why Language Models Hallucinate
+sidebar_label: Why Models Hallucinate
 tags:
   - math
   - llm

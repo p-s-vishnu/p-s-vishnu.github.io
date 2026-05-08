@@ -1,6 +1,6 @@
 ---
 title: Langchain
-sidebar_label: Langchain
+sidebar_label: LangChain
 tags:
   - retrieval
   - python

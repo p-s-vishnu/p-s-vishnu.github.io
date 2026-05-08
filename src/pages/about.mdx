@@ -1,113 +1,24 @@
 ---
-title: About Me
+title: About
 ---
 
-import StackIcon from '@site/src/components/StackIcon';
+import Experience from '@site/src/components/Experience';
+import Toolkit from '@site/src/components/Toolkit';
 
-<header className="home-hero about-hero">
-  <h1>About me</h1>
-  <p className="lead">
-    📍 AI Engineer based in the UK - building intelligent systems that solve real-world problems.
-    Core focus on the NLP ecosystem: LLMs, RAG, and Agents, backed by Deep Learning, MLOps, and Computer Vision.
-  </p>
-  <div className="home-chips">
-    <span className="home-chip">LLMs &amp; RAG</span>
-    <span className="home-chip">MLOps</span>
-    <span className="home-chip">Computer Vision</span>
-    <span className="home-chip">Deep Learning</span>
-  </div>
-</header>
+<div className="ex-canvas">
+  <section className="ex-section ex-about-hero">
+    <div className="ex-hero__eyebrow">About</div>
+    <h1 className="ex-section-title">
+      Vishnu P.S.
+    </h1>
+    <p className="ex-hero__body">
+      I build ML systems and LLM applications across startups and enterprises, from data science to production engineering.
+    </p>
+    <p className="ex-hero__body">
+      When I'm not building, you can find me unwinding with violin covers, gaming, working out, or exploring new destinations.
+    </p>
+  </section>
 
-<section className="home-section about-section">
-  <p>
-    When I'm not building, you can find me unwinding with violin covers, gaming, working out, or exploring new destinations.
-  </p>
-</section>
-
-<section className="home-section about-section">
-  <h2>Skills &amp; Technologies</h2>
-
-  <div className="about-skills-group">
-    <h3 className="about-skills-label">AI, Data &amp; MLOps</h3>
-    <div className="about-skills-grid">
-      <StackIcon name="python" />
-      <StackIcon name="c++" />
-      <StackIcon name="pytorch" />
-      <StackIcon name="tensorflow" />
-      <StackIcon name="huggingface" />
-      <StackIcon name="vllm" />
-      <StackIcon name="langchain" />
-      <StackIcon name="langsmith" />
-      <StackIcon name="streamlit" />
-    </div>
-  </div>
-
-  <div className="about-skills-group">
-    <h3 className="about-skills-label">Backend, Databases &amp; DevOps</h3>
-    <div className="about-skills-grid">
-      <StackIcon name="fastapi" />
-      <StackIcon name="postgresql" />
-      <StackIcon name="docker" />
-      <StackIcon name="kubernetes" />
-      <StackIcon name="terraform" />
-      <StackIcon name="gcloud" />
-      <StackIcon name="aws" />
-      <StackIcon name="grafana" />
-      <StackIcon name="prometheus" />
-    </div>
-  </div>
-</section>
-
-<section className="home-section about-section">
-  <h2>Timeline</h2>
-  <ol className="about-timeline">
-    <li className="about-timeline-item">
-      <span className="home-chip about-timeline-year">2025</span>
-      <span className="about-timeline-text">
-        AI Engineer at <a href="https://www.courtcorrect.com/">CourtCorrect</a> - helping customers streamline complaints and reduce quality fails using AI.
-      </span>
-    </li>
-    <li className="about-timeline-item">
-      <span className="home-chip about-timeline-year">2023</span>
-      <span className="about-timeline-text">
-        Self-employed - Improving Large Language Models at <a href="https://www.cohere.com/">Cohere AI</a> and <a href="https://www.zackriya.com/">Zackriya Solutions</a>.
-      </span>
-    </li>
-    <li className="about-timeline-item">
-      <span className="home-chip about-timeline-year">2022</span>
-      <span className="about-timeline-text">
-        ML Engineer at <a href="https://www.vodafone.com/">Vodafone</a> strengthening Germany market. Masters in Artificial Intelligence from Queen Mary University of London.
-      </span>
-    </li>
-    <li className="about-timeline-item">
-      <span className="home-chip about-timeline-year">2020</span>
-      <span className="about-timeline-text">
-        Data Scientist at <a href="https://www.happiestminds.com/">Happiest Minds</a> - stakeholder management, data engineering, analytics, modelling, and deployment.
-      </span>
-    </li>
-    <li className="about-timeline-item">
-      <span className="home-chip about-timeline-year">2019</span>
-      <span className="about-timeline-text">
-        PG Diploma in Data Science from Great Lakes Institute of Management.
-      </span>
-    </li>
-    <li className="about-timeline-item">
-      <span className="home-chip about-timeline-year">2018</span>
-      <span className="about-timeline-text">
-        Co-Dean &amp; Lead Organizer at <a href="https://www.meetup.com/school-of-ai-trivandrum/">School of AI, Trivandrum</a> - non-profit.
-      </span>
-    </li>
-    <li className="about-timeline-item">
-      <span className="home-chip about-timeline-year">2017</span>
-      <span className="about-timeline-text">
-        Product Engineer at <a href="https://www.envestnet.com/">Envestnet</a> - delved into FinTech and started Andrew Ng's and Udacity machine learning courses.
-      </span>
-    </li>
-    <li className="about-timeline-item">
-      <span className="home-chip about-timeline-year">2016</span>
-      <span className="about-timeline-text">
-        Incubated startup Amnoid Labs with friends at University.
-      </span>
-    </li>
-  </ol>
-</section>
+  <Experience />
+  <Toolkit />
+</div>

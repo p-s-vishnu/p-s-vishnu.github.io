@@ -1,9 +1,12 @@
 ---
-title: Evaluations
-sidebar_label: Evaluations
+title: LLM Evaluations
+sidebar_label: llm output evals
 tags:
   - llm
 ---
+
+> Component-level / output-level LLM evals — hallucinations, accuracy, judge models.
+> For multi-step agents (trajectories, tool calls, golden traces) see [Agent evals](/notes/agents/eval).
 
 ### Hallucinations
 
@@ -50,6 +53,8 @@ Tell the AI: “Answer only with verified information. If you’re not sure, say
 
 ### Evaluations
 
+**Agent evaluation** 
+- Agents are useful but their complexity makes it difficukt
 
 
 **References:**

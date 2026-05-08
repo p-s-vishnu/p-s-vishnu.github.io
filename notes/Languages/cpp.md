@@ -1,4 +1,7 @@
-
+---
+title: C++
+sidebar_label: C++
+---
 
 **References**
 1. [C++ Primer](https://www.stroustrup.com/4th.html)
