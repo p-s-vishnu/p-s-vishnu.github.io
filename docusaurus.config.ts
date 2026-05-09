@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Vishnu P.S.',
   tagline: 'AI Engineer - Deep Learning | LLM | RAG | Agents | MLOps',
-  favicon: 'img/logo.svg',
+  favicon: 'img/favicon.ico',
   markdown: {
     mermaid: true,
     hooks: {
@@ -19,17 +19,12 @@ const config: Config = {
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
-    experimental_faster: {
-      // LightningCSS preserves @media inside @layer in production builds,
-      // working around facebook/docusaurus#11567 (cssnano extracts media
-      // queries out of cascade layers, breaking customCss specificity).
-      lightningCssMinimizer: true,
-    },
   },
 
   // Client modules for browser-side functionality
   clientModules: [
     './src/clientModules/navbar-scroll.js',
+    './src/clientModules/accent-init.js',
   ],
 
   // Preconnect to external resources for better performance
@@ -47,6 +42,48 @@ const config: Config = {
         rel: 'preconnect',
         href: 'https://fonts.gstatic.com',
         crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        href: '/img/favicon-16x16.png',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        href: '/img/favicon-32x32.png',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '192x192',
+        href: '/img/favicon-192x192.png',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/img/apple-touch-icon.png',
       },
     },
   ],
@@ -86,7 +123,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/p-s-vishnu/p-s-vishnu.github.io/tree/master/',
+            'https://github.com/p-s-vishnu/p-s-vishnu.github.io/tree/main/', // Updated
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -99,7 +136,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/p-s-vishnu/p-s-vishnu.github.io/tree/master/',
+            'https://github.com/p-s-vishnu/p-s-vishnu.github.io/tree/main/', // Updated
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -145,30 +182,31 @@ const config: Config = {
       // Optional: Algolia search options
       // debug: true,
     },
-    // Open Graph / Twitter social card
+    // Replace with your project's social card
     image: 'img/og-social-card.png',
     stylesheets: [
+      'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css',
       'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css',
     ],
     colorMode: {
-      defaultMode: 'light',
-      respectPrefersColorScheme: true,
+      defaultMode: 'dark',
+      respectPrefersColorScheme: false,
     },
     navbar: {
       title: 'Vishnu P.S.',
       logo: {
-        alt: 'Vishnu P.S. monogram',
+        alt: 'Vishnu\'s Portfolio Logo',
         src: 'img/logo.svg',
       },
       items: [
-        {
-          label: 'Notes',
-          to: '/notes',
-          position: 'right',
-        },
+        // {
+        //   label: 'Notes',
+        //   to: '/notes',
+        //   position: 'right',
+        // },
         {
           to: '/blog',
-          label: 'Blog',
+          label: 'Blogs',
           position: 'right',
         },
         // {
@@ -189,26 +227,25 @@ const config: Config = {
         {
           items: [
             {
-              html: `<a href="https://www.linkedin.com/in/psvishnu/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>`,
+              label: 'GitHub',
+              href: 'https://github.com/p-s-vishnu',
             },
             {
-              html: `<a href="https://medium.com/@psvishnu" target="_blank" rel="noopener noreferrer" aria-label="Medium" title="Medium"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 1 1-13.6 0 6.8 6.8 0 0 1 13.6 0zm7.46 0c0 3.54-1.52 6.42-3.4 6.42S14.2 15.54 14.2 12s1.52-6.42 3.4-6.42S21 8.46 21 12zm3 0c0 3.18-.54 5.76-1.2 5.76-.66 0-1.2-2.58-1.2-5.76s.54-5.76 1.2-5.76c.66 0 1.2 2.58 1.2 5.76z"/></svg></a>`,
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/in/psvishnu/',
             },
             {
-              html: `<a href="mailto:hellovishnups@gmail.com" aria-label="Email" title="Email"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>`,
+              label: 'Medium',
+              href: 'https://medium.com/@psvishnu',
             },
             {
-              html: `<a href="https://github.com/p-s-vishnu" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.2c-3.34.72-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.78-1.34-1.78-1.1-.74.08-.72.08-.72 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.21.7.83.58A12 12 0 0 0 12 .3"/></svg></a>`,
+              label: 'Kaggle',
+              href: 'https://www.kaggle.com/psvishnu',
             },
-            {
-              html: `<a href="https://www.kaggle.com/psvishnu" target="_blank" rel="noopener noreferrer" aria-label="Kaggle" title="Kaggle"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.83 23.16h-3.91a.62.62 0 0 1-.5-.25l-5.34-6.94-1.6 1.5v5.18a.46.46 0 0 1-.5.51H4.06a.45.45 0 0 1-.5-.5V.83A.45.45 0 0 1 4.05.32h2.92a.46.46 0 0 1 .5.5v13.28L13.7 7.7a.86.86 0 0 1 .58-.27h4.04a.43.43 0 0 1 .43.27.41.41 0 0 1-.06.5l-6.36 6.13 6.85 8.18c.13.16.16.35.05.5a.42.42 0 0 1-.4.16z"/></svg></a>`,
-            },
-            {
-              html: `<a href="/rss.xml" target="_blank" rel="noopener noreferrer" aria-label="RSS Feed" title="RSS Feed"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.18 15.64a2.18 2.18 0 1 1 0 4.36 2.18 2.18 0 0 1 0-4.36zM4 4.44a15.56 15.56 0 0 1 15.56 15.56h-3.1A12.46 12.46 0 0 0 4 7.54V4.44zm0 5.55a10 10 0 0 1 10 10h-3.1A6.91 6.91 0 0 0 4 13.1v-3.1z"/></svg></a>`,
-            }
-          ]
+          ],
         },
-      ]
+      ],
+      copyright: '© 2026 - VISHNUPS.COM',
     },
     prism: {
       theme: prismThemes.github,

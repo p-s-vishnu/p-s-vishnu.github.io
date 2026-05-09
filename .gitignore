@@ -28,4 +28,6 @@ yarn-error.log*
 *.py
 *.toml
 .python-version
-.playwright-mcp
+
+# playwright
+.playwright-mcp/

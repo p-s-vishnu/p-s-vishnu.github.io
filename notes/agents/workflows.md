@@ -1,5 +1,6 @@
 ---
 title: Agents & Workflows
+sidebar_label: Agents & Workflows
 tags:
   - llm
 ---
