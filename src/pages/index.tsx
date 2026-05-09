@@ -543,7 +543,6 @@ export default function Home(): React.ReactElement {
         <Hero accent={accent} />
         <Writing accent={accent} />
         <Projects accent={accent} />
-        <Notes accent={accent} />
         <SiteFooter accent={accent} />
       </div>
     </Layout>
