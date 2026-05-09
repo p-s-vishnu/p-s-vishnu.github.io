@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkportfolio=globalThis.webpackChunkportfolio||[]).push([[3240],{8980(e){e.exports=JSON.parse('{"tag":{"label":"retrieval","permalink":"/notes/tags/retrieval","allTagsPath":"/notes/tags","count":1,"items":[{"id":"llm/langchain","title":"Langchain","description":"References","permalink":"/notes/llm/langchain"}],"unlisted":false}}')}}]);
